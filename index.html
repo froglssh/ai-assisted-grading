@@ -2,13 +2,928 @@
 <html lang="zh-TW">
 <head>
   <meta charset="utf-8">
-  <title>AI 輔助教學 - 實驗探究</title>
-  <meta http-equiv="refresh" content="0; url=2實驗報告批改/AI_Grading_PPT/AI輔助教學_實驗探究.html">
-  <script>
-    window.location.href = "2實驗報告批改/AI_Grading_PPT/AI輔助教學_實驗探究.html";
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI輔助自然探究實作 - 麗山高中林獻升老師</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+    :root {
+      --primary: #2d6a4f;
+      --primary-light: #e8f5e9;
+      --secondary: #156f72;
+      --secondary-light: #e0f2f1;
+      --accent: #b57519;
+      --ink: #1f2937;
+      --ink-light: #4b5563;
+      --bg: #f4f7f6;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(45, 106, 79, 0.06);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      color: var(--ink);
+      background-color: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ── HEADER & HERO ── */
+    header {
+      background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+      color: white;
+      padding: 60px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      right: -50px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .bio-icon {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      fill: #a3e635;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+    }
+
+    h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+      color: #d1fae5;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      max-width: 700px;
+      opacity: 0.85;
+      line-height: 1.8;
+    }
+
+    /* ── QUICK LINKS ── */
+    .quick-links {
+      max-width: 1200px;
+      margin: -40px auto 40px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .quick-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 160px;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(45, 106, 79, 0.12);
+      border-color: var(--primary);
+    }
+
+    .qc-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .qc-icon {
+      font-size: 28px;
+      color: var(--primary);
+      background: var(--primary-light);
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .qc-title {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .qc-desc {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.5;
+    }
+
+    .qc-btn {
+      align-self: flex-end;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      transition: var(--transition);
+    }
+
+    .quick-card:hover .qc-btn {
+      color: var(--secondary);
+    }
+
+    /* ── MAIN DASHBOARD ── */
+    .dashboard {
+      max-width: 1200px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .dash-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .dash-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dash-title::before {
+      content: '';
+      width: 6px;
+      height: 28px;
+      background-color: var(--primary);
+      border-radius: 3px;
+    }
+
+    .drive-all-btn {
+      background: #4285f4;
+      color: white;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(66, 133, 244, 0.2);
+      transition: var(--transition);
+    }
+
+    .drive-all-btn:hover {
+      background: #357ae8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(66, 133, 244, 0.3);
+    }
+
+    /* TABS CONTROL */
+    .tabs-nav {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tabs-nav::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .tabs-nav::-webkit-scrollbar-thumb {
+      background: var(--primary-light);
+      border-radius: 2px;
+    }
+
+    .tab-btn {
+      padding: 10px 20px;
+      background: transparent;
+      border: none;
+      font-weight: 500;
+      font-size: 0.98rem;
+      color: var(--ink-light);
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* TAB CONTENT */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 20px;
+    }
+
+    .file-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .file-card:hover {
+      border-color: var(--primary-light);
+      box-shadow: 0 12px 25px rgba(45, 106, 79, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .fc-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .fc-icon {
+      font-size: 26px;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* File type color definitions */
+    .ft-xlsx { background: #e8f5e9; color: #2e7d32; }
+    .ft-pdf { background: #ffebee; color: #c62828; }
+    .ft-docx { background: #e3f2fd; color: #1565c0; }
+    .ft-img { background: #fff8e1; color: #f57f17; }
+    .ft-media { background: #f3e5f5; color: #6a1b9a; }
+
+    .fc-title-area {
+      flex: 1;
+    }
+
+    .fc-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+
+    .fc-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .badge-type { background: #f3f4f6; color: #4b5563; }
+    .badge-scope { background: #eef2ff; color: #4f46e5; }
+
+    .fc-desc {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .fc-actions {
+      display: flex;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    .fc-btn {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .fc-btn-view {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid transparent;
+    }
+
+    .fc-btn-view:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .fc-btn-dl {
+      background: white;
+      color: var(--ink-light);
+      border: 1px solid var(--border);
+    }
+
+    .fc-btn-dl:hover {
+      background: #f9fafb;
+      color: var(--ink);
+      border-color: var(--ink-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1b4332;
+      color: #a3b899;
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 4px solid var(--secondary);
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-container {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .title-wrapper {
+        align-items: flex-start;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .bio-icon {
+        width: 52px;
+        height: 52px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <p>頁面跳轉中，若沒有自動跳轉請點擊 <a href="2實驗報告批改/AI_Grading_PPT/AI輔助教學_實驗探究.html">此處</a>。</p>
+
+  <!-- ── 頁首 HERO ── -->
+  <header>
+    <div class="hero-container">
+      <div class="hero-text">
+        <div class="title-wrapper">
+          <!-- 生物科圖案標誌：融合樹葉與DNA雙螺旋結構的精緻SVG -->
+          <svg class="bio-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M425.9 146.5c-15.5-23.7-44.4-48-91.9-63.5-7-2.3-14.7 1.5-17 8.5-2.3 7 1.5 14.7 8.5 17 38.6 12.6 60.6 30.6 71.8 47.7-18.6 6.8-43.1 11-71.1 12.2-4.5-5.9-9.6-11.8-15.4-17.7-27.1-27.5-62-43.7-93.5-43.7-47.5 0-97.1 36.8-132.8 98.7C48.6 262 32 324.9 32 371.4c0 36.6 20.3 64.1 60.5 81.8 6.4 2.8 13.9-.1 16.7-6.5s-.1-13.9-6.5-16.7c-27.9-12.3-40.7-30-40.7-58.6 0-38.3 14.8-95.2 47.2-151.3 32.5-56.3 76.2-88.7 114.8-88.7 20 0 45.4 11.8 66 32.7 8.7 8.8 16.3 19.3 22.8 30.9-20.2 4.1-41 10.3-61.4 18.7C214.3 280.9 184 316.5 168.3 355.6c-7.9 19.7-11.3 38.8-9.8 55.4.9 9.8 4.2 18 10 24.3 7.6 8.3 19.9 12.7 34.6 12.7 31.7 0 71-20.8 104.9-55.6 13.7-14.1 26.2-30.2 36.7-47.8 28.5-3.3 54.4-11.3 75.3-23.7 24.7-14.6 39.5-33.8 43.1-55.7 3.9-23.4-3.3-48.4-17.2-72.4zM277.5 365.1c-25.7 26.4-55 41.7-74.4 42.9.2-8.3 2.1-20.4 7.6-34 11.5-28.6 35-56.1 66.8-71.1-1.3 22.7.2 43.8 7.8 62.9-2.6 6.8-5.2 13.3-7.8 19.3zm55.3-76.3c-6.8 13-15.3 25-25.1 35.8-6.1-16.9-7-34.9-5-53.1 10 3.8 20.1 9.2 30.1 17.3zm47.2-32.9c-15.7 8.4-34.4 13.8-54.6 16.1-2-9-5.1-17.7-9.4-25.8 22.1-2.2 43.5-7.4 64-15.5.2 1.7.3 3.4 0 5.2z"/>
+          </svg>
+          <h1>AI輔助自然探究實作</h1>
+        </div>
+        <p class="subtitle">臺北市立麗山高中 — 林獻升老師</p>
+        <p class="hero-desc">
+          本平台整合高中自然科學探究與實作課程之 AI 輔助評閱資源，提供模型評比、提示詞工程、各類教學教案與演示檔案。教師可透過各區塊快速存取已發布之線上教材及儲存庫資源。
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 精選快捷功能區 ── -->
+  <section class="quick-links">
+    <!-- 卡片 1 -->
+    <div class="quick-card">
+      <div class="qc-top">
+        <div class="qc-icon"><i class="ti ti-book" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="qc-title">AI 報告批改教學指南</h3>
+          <p class="qc-desc">模型選擇、規準數位化建構與實務完整指引。</p>
+        </div>
+      </div>
+      <a class="qc-btn" href="2%E5%AF%A6%E9%A9%97%E5%A0%B1%E5%91%8A%E6%89%B9%E6%94%B9/AI%E8%BC%94%E5%8A%A9%E5%AF%A6%E9%A9%97%E5%A0%B1%E5%91%8A%E6%89%B9%E6%94%B9%E6%95%99%E5%AD%B8%E7%B6%B2%E9%A0%81.html" target="_blank">進入教學網頁 <i class="ti ti-external-link" aria-hidden="true"></i></a>
+    </div>
+
+    <!-- 卡片 2 -->
+    <div class="quick-card">
+      <div class="qc-top">
+        <div class="qc-icon"><i class="ti ti-presentation" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="qc-title">實驗探究教學簡報</h3>
+          <p class="qc-desc">AI 輔助教學簡報演示，支援在線播放投影片。</p>
+        </div>
+      </div>
+      <a class="qc-btn" href="2%E5%AF%A6%E9%A9%97%E5%A0%B1%E5%91%8A%E6%89%B9%E6%94%B9/AI_Grading_PPT/AI%E8%BC%94%E5%8A%A9%E6%95%99%E5%AD%B8_%E5%AF%A6%E9%A9%97%E6%8E%A2%E7%A9%B6.html" target="_blank">觀看教學簡報 <i class="ti ti-external-link" aria-hidden="true"></i></a>
+    </div>
+
+    <!-- 卡片 3 -->
+    <div class="quick-card">
+      <div class="qc-top">
+        <div class="qc-icon"><i class="ti ti-route" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="qc-title">顯微測量評分工作流</h3>
+          <p class="qc-desc">六步驟扣分制與個人反思給分制互動教學。</p>
+        </div>
+      </div>
+      <a class="qc-btn" href="2%E5%AF%A6%E9%A9%97%E5%A0%B1%E5%91%8A%E6%89%B9%E6%94%B9/%E9%A1%AF%E5%BE%AE%E6%B8%AC%E9%87%8F/0%E5%BB%BA%E7%AB%8B%E8%A9%95%E5%88%86%E6%A8%99%E6%BA%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B_%E7%B6%B2%E9%A0%81.html" target="_blank">查看評分流程 <i class="ti ti-external-link" aria-hidden="true"></i></a>
+    </div>
+
+    <!-- 卡片 4 -->
+    <div class="quick-card">
+      <div class="qc-top">
+        <div class="qc-icon" style="background:#fff0f6;color:#d81b60;"><i class="ti ti-chalkboard" aria-hidden="true"></i></div>
+        <div>
+          <h3 class="qc-title">Padlet 課程研討牆</h3>
+          <p class="qc-desc">林獻升老師的 AI 輔助評量 Padlet 線上共筆板。</p>
+        </div>
+      </div>
+      <a class="qc-btn" href="https://padlet.com/linxiansheng2_1/ai-lcwjxp85x5ryfq1n" target="_blank" style="color:#d81b60;">前往共筆研討牆 <i class="ti ti-external-link" aria-hidden="true"></i></a>
+    </div>
+  </section>
+
+  <!-- ── 檔案中心 DASHBOARD ── -->
+  <main class="dashboard">
+    <div class="dash-header">
+      <h2 class="dash-title">資源下載與檢視中心</h2>
+      <a class="drive-all-btn" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">
+        <i class="ti ti-brand-google-drive" aria-hidden="true"></i> 進入 Google 雲端硬碟主資料夾
+      </a>
+    </div>
+
+    <!-- 標籤導覽 (Tabs) -->
+    <div class="tabs-nav" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab(event, 'tab-2')">
+        <i class="ti ti-microscope" aria-hidden="true"></i> 實驗報告批改
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(event, 'tab-3')">
+        <i class="ti ti-file-text" aria-hidden="true"></i> 考卷非選批改
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(event, 'tab-4')">
+        <i class="ti ti-award" aria-hidden="true"></i> 小論文競賽評審
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(event, 'tab-5')">
+        <i class="ti ti-edit" aria-hidden="true"></i> 國寫作文批改
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(event, 'tab-1')">
+        <i class="ti ti-table" aria-hidden="true"></i> 手寫成績 OCR
+      </button>
+    </div>
+
+    <!-- ── 分類一：實驗報告批改 ── -->
+    <div id="tab-2" class="tab-pane active" role="tabpanel">
+      <div class="file-grid">
+        <!-- 檔案卡片 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">AI輔助自然科學探究與實作實驗報告評閱論文</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF</span>
+                  <span class="badge badge-scope">學術深度研究</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">高中課程實驗報告評閱與學習評量之深度分析與系統建置學術研究報告。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">AI代理程式（AI Agent）架構與專屬機器人設定操作指南</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF / DOCX</span>
+                  <span class="badge badge-scope">操作指南</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">說明如何建立專屬的 AI Agent 批改助理，並內含指令設計說明。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">顯微測量技術：實驗講義、記錄與評分解答標準</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF組合包</span>
+                  <span class="badge badge-scope">課堂教材</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">內含顯微測量技術實驗記錄 PDF、實驗講義 PDF 以及標準答案與評分標準。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-media"><i class="ti ti-music" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">語音與影音導覽介紹檔案</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">MP4 / M4A</span>
+                  <span class="badge badge-scope">多媒體簡介</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">內含新課綱批改挑戰影音（MP4）與 AI 批改高中實驗報告指南語音檔（M4A）。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 分類二：考卷非選批改 ── -->
+    <div id="tab-3" class="tab-pane" role="tabpanel">
+      <div class="file-grid">
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">114學科能力測驗模擬考非選擇題答案批改評審</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF</span>
+                  <span class="badge badge-scope">批改示範</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">提供模擬考非選擇題答案批改示範，包含 ChatGPT 與 Gemini 批改效果對照。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">114年E2 / E3 模擬考自然科題目與解答</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF</span>
+                  <span class="badge badge-scope">模擬考題</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">含114年E2與E3學測模擬考試卷、非選評分原則、標準解答與詳細說明。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-docx"><i class="ti ti-file-type-docx" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">考題非選批改評審設定提示詞</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">DOCX / PDF</span>
+                  <span class="badge badge-scope">提示詞工程</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">用於非選擇題答案 AI 批改與給分原則解析的專屬系統設定提示詞文件。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 分類三：小論文競賽評審 ── -->
+    <div id="tab-4" class="tab-pane" role="tabpanel">
+      <div class="file-grid">
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">小論文競賽評審要點、注意事項與實施辦法</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF組合</span>
+                  <span class="badge badge-scope">官方規章</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">全國高級中等學校小論文寫作比賽官方規則、引用格式與投稿注意事項。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">小論文寫作生物類群評分標準與扣分原則</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF / DOCX</span>
+                  <span class="badge badge-scope">評審專家版</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">專為生物類群小論文訂定之精細評分規準與扣分原則（專家審查適用）。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-docx"><i class="ti ti-file-type-docx" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">小論文競賽 AI 設定與引導提示詞（v1~v7）</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">DOCX / PDF</span>
+                  <span class="badge badge-scope">AI輔導設定</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">包含生物類群與各類群通用的小論文 AI 評審引導與大綱微調提示詞（多版本）。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 分類四：國寫作文批改 ── -->
+    <div id="tab-5" class="tab-pane" role="tabpanel">
+      <div class="file-grid">
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">115年學測國文寫作測驗批改與評分示範</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF / DOCX</span>
+                  <span class="badge badge-scope">作文範例</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">國文寫作（國寫）非選擇題之 AI 批改分析、評語回饋與詳細得分判定示範。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">115學測國寫非選擇題評分原則</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF</span>
+                  <span class="badge badge-scope">大考規準</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">學科能力測驗國文科寫作測驗之官方閱卷與給分標準原則說明。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">學生手寫作文原卷（1-1 至 2-6）</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">PDF組</span>
+                  <span class="badge badge-scope">手寫原始卷</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">包含數十份真實學生國寫手寫考卷掃描檔，供 AI 批改與辨識系統測試使用。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 分類五：手寫成績 OCR ── -->
+    <div id="tab-1" class="tab-pane" role="tabpanel">
+      <div class="file-grid">
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-xlsx"><i class="ti ti-file-type-xls" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">生物科手寫成績單 OCR 辨識結果表</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">XLSX</span>
+                  <span class="badge badge-scope">OCR數據表</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">含 Gemini、Claude 以及 GPT 辨識之成績對照 Excel 表格。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-img"><i class="ti ti-photo" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">手寫成績原始考卷影像</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-type">JPG</span>
+                  <span class="badge badge-scope">手寫成績</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">供測試表格欄位 OCR 數據讀取的手寫成績原始照片檔案。</p>
+          </div>
+          <div class="fc-actions">
+            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
+            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── 頁尾 FOOTER ── -->
+  <footer>
+    <p><strong>AI輔助自然探究實作 Portal</strong> · 臺北市立麗山高中 林獻升老師 著作權所有</p>
+    <p>共同探討 AI 在高中自然科學探究實作與大考評審之教學應用</p>
+  </footer>
+
+  <script>
+    function switchTab(evt, tabId) {
+      var tabPanes = document.getElementsByClassName("tab-pane");
+      for (var i = 0; i < tabPanes.length; i++) {
+        tabPanes[i].classList.remove("active");
+      }
+      
+      var tabBtns = document.getElementsByClassName("tab-btn");
+      for (var i = 0; i < tabBtns.length; i++) {
+        tabBtns[i].classList.remove("active");
+        tabBtns[i].setAttribute("aria-selected", "false");
+      }
+
+      document.getElementById(tabId).classList.add("active");
+      evt.currentTarget.classList.add("active");
+      evt.currentTarget.setAttribute("aria-selected", "true");
+    }
+  </script>
 </body>
 </html>
