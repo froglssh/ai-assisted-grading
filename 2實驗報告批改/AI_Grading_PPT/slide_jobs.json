@@ -290,20 +290,21 @@
       "requires_context_images": false,
       "expected_generation_mode": "generate",
       "status": "recorded",
+      "blocker": null,
       "dispatch": {
-        "agent_id": "parent",
-        "agent_nickname": "parent",
+        "agent_id": "9f620857-0573-44a5-a31b-4a797119d172",
+        "agent_nickname": null,
         "prompt": "prompts/slide_07.json",
-        "prompt_sha256": "3753d3697cd015915dc8de096e3a065cf3006693472d8a86ff837966a845a127",
-        "dispatched_at": "2026-06-25T14:23:03Z"
+        "prompt_sha256": "d2e62cdafe1bf67d477e1e516c6c26b757ecc94161fe07b48d8e336780b34656",
+        "dispatched_at": "2026-06-25T14:39:16Z"
       },
       "result": {
-        "agent_id": "parent",
+        "agent_id": "9f620857-0573-44a5-a31b-4a797119d172",
         "backend_used": "scripts/image_gen.py --backend auto",
-        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_07.png",
-        "selected_source_sha256": "63de87bd35846a424afcd1926570f9809b0cbb317f642f5b60f086b9c0c10585",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_07_candidate.png",
+        "selected_source_sha256": "65da7a9069147bfbe47a11fd3bc1059bb36bd9c462af0f4ef6efc7dac3580ab7",
         "final_image": "origin_image/slide_07.png",
-        "final_image_sha256": "63de87bd35846a424afcd1926570f9809b0cbb317f642f5b60f086b9c0c10585",
+        "final_image_sha256": "65da7a9069147bfbe47a11fd3bc1059bb36bd9c462af0f4ef6efc7dac3580ab7",
         "expected_backend": "scripts/image_gen.py --backend auto",
         "expected_backend_labels": [
           "scripts/image_gen.py --backend auto",
@@ -311,10 +312,9 @@
           "scripts/image_gen.py"
         ],
         "sample_generation_method_matched": true,
-        "qa_note": "Static infographic copied.",
-        "recorded_at": "2026-06-25T14:23:31Z"
-      },
-      "blocker": null
+        "qa_note": "The slide was successfully generated with a clear 3-column layout, correct Chinese text, and visual elements matching Style A.",
+        "recorded_at": "2026-06-25T14:40:48Z"
+      }
     },
     {
       "slide_id": "slide_08",
@@ -529,20 +529,21 @@
       "requires_context_images": false,
       "expected_generation_mode": "generate",
       "status": "recorded",
+      "blocker": null,
       "dispatch": {
-        "agent_id": "parent",
-        "agent_nickname": "parent",
+        "agent_id": "75e56465-4d5c-4205-bd4e-fe5d1a567e6a",
+        "agent_nickname": null,
         "prompt": "prompts/slide_13.json",
-        "prompt_sha256": "d4df8c58acfdf2eb328b596c383b0a1f0cd19511e1804caf0ccae547b2f5a6a6",
-        "dispatched_at": "2026-06-25T14:23:31Z"
+        "prompt_sha256": "d225b86d7fa9de8882012f72e9687213052ca95bb0efc79ea6eec41db193e5bc",
+        "dispatched_at": "2026-06-25T14:39:21Z"
       },
       "result": {
-        "agent_id": "parent",
+        "agent_id": "75e56465-4d5c-4205-bd4e-fe5d1a567e6a",
         "backend_used": "scripts/image_gen.py --backend auto",
-        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_13.png",
-        "selected_source_sha256": "cbd0108d99ecd2256b3ee7c3b5632dd6223af94b2e43ae6e742efdea11438118",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_13_candidate.png",
+        "selected_source_sha256": "6d5d70400cd810dbd1abf1e2db77044ce3e9227b066aaa00c205576b3046df29",
         "final_image": "origin_image/slide_13.png",
-        "final_image_sha256": "cbd0108d99ecd2256b3ee7c3b5632dd6223af94b2e43ae6e742efdea11438118",
+        "final_image_sha256": "6d5d70400cd810dbd1abf1e2db77044ce3e9227b066aaa00c205576b3046df29",
         "expected_backend": "scripts/image_gen.py --backend auto",
         "expected_backend_labels": [
           "scripts/image_gen.py --backend auto",
@@ -550,10 +551,9 @@
           "scripts/image_gen.py"
         ],
         "sample_generation_method_matched": true,
-        "qa_note": "Static infographic copied.",
-        "recorded_at": "2026-06-25T14:23:31Z"
-      },
-      "blocker": null
+        "qa_note": "Slide 13 has been successfully generated, matching the Style A theme with clear concept illustrations on the left and detailed cards on the right, displaying readable Chinese text.",
+        "recorded_at": "2026-06-25T14:40:42Z"
+      }
     },
     {
       "slide_id": "slide_14",
@@ -916,20 +916,21 @@
       "requires_context_images": false,
       "expected_generation_mode": "generate",
       "status": "recorded",
+      "blocker": null,
       "dispatch": {
-        "agent_id": "parent",
-        "agent_nickname": "parent",
+        "agent_id": "2331df74-505a-4ff7-8e11-7935edd607c0",
+        "agent_nickname": null,
         "prompt": "prompts/slide_22.json",
-        "prompt_sha256": "2ae9bdb4e26f6777d9cce2a8dd5cd5613b231b692145e81538eb14658a1cdfaa",
-        "dispatched_at": "2026-06-25T14:23:31Z"
+        "prompt_sha256": "6a0adc5843ff9e2b4fe9c36b135490c002ebc4c90584b0cce7758d4f7e29e2dd",
+        "dispatched_at": "2026-06-25T14:39:24Z"
       },
       "result": {
-        "agent_id": "parent",
+        "agent_id": "2331df74-505a-4ff7-8e11-7935edd607c0",
         "backend_used": "scripts/image_gen.py --backend auto",
-        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_22.png",
-        "selected_source_sha256": "4c8d548e425c87aa75a91575cabec728a10651ac13ab6f45e4482ae1b96eced5",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_22_candidate.png",
+        "selected_source_sha256": "738e8a2f52a4872e5bb09d44a11a0575d3f2314c43f112adf196362d58b932e2",
         "final_image": "origin_image/slide_22.png",
-        "final_image_sha256": "4c8d548e425c87aa75a91575cabec728a10651ac13ab6f45e4482ae1b96eced5",
+        "final_image_sha256": "738e8a2f52a4872e5bb09d44a11a0575d3f2314c43f112adf196362d58b932e2",
         "expected_backend": "scripts/image_gen.py --backend auto",
         "expected_backend_labels": [
           "scripts/image_gen.py --backend auto",
@@ -937,10 +938,9 @@
           "scripts/image_gen.py"
         ],
         "sample_generation_method_matched": true,
-        "qa_note": "Static infographic copied.",
-        "recorded_at": "2026-06-25T14:23:31Z"
-      },
-      "blocker": null
+        "qa_note": "The slide image for slide 22 was successfully generated with a clean four-quadrant layout displaying the RTCO framework matching the approved Style A aesthetics.",
+        "recorded_at": "2026-06-25T14:40:46Z"
+      }
     },
     {
       "slide_id": "slide_23",
@@ -1346,20 +1346,21 @@
       "requires_context_images": false,
       "expected_generation_mode": "generate",
       "status": "recorded",
+      "blocker": null,
       "dispatch": {
-        "agent_id": "parent",
-        "agent_nickname": "parent",
+        "agent_id": "40696008-c6ff-4d9a-9dd2-caa9bc7c94ca",
+        "agent_nickname": null,
         "prompt": "prompts/slide_32.json",
-        "prompt_sha256": "cf19473dd658c2421d963ab95b7f0d3267898921c0b4afb34062885b19fe7dac",
-        "dispatched_at": "2026-06-25T14:23:32Z"
+        "prompt_sha256": "509e0a51a73141832ffb854e665cee56d85daad67a02b1aec27d63df285051b7",
+        "dispatched_at": "2026-06-25T14:39:27Z"
       },
       "result": {
-        "agent_id": "parent",
+        "agent_id": "40696008-c6ff-4d9a-9dd2-caa9bc7c94ca",
         "backend_used": "scripts/image_gen.py --backend auto",
-        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_32.png",
-        "selected_source_sha256": "b5fca1df1262f73e41ef271e0e26ba65197add90d6a378b8c4ea1fbb72f9cc43",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_32_candidate.png",
+        "selected_source_sha256": "641f2fff0fb7411829d5d36f5e38e8c2c5e5f62d08df5b67af57d91899bf6a5f",
         "final_image": "origin_image/slide_32.png",
-        "final_image_sha256": "b5fca1df1262f73e41ef271e0e26ba65197add90d6a378b8c4ea1fbb72f9cc43",
+        "final_image_sha256": "641f2fff0fb7411829d5d36f5e38e8c2c5e5f62d08df5b67af57d91899bf6a5f",
         "expected_backend": "scripts/image_gen.py --backend auto",
         "expected_backend_labels": [
           "scripts/image_gen.py --backend auto",
@@ -1367,10 +1368,9 @@
           "scripts/image_gen.py"
         ],
         "sample_generation_method_matched": true,
-        "qa_note": "Static infographic copied.",
-        "recorded_at": "2026-06-25T14:23:32Z"
-      },
-      "blocker": null
+        "qa_note": "Slide 32 image was successfully generated using the codex-oauth backend, featuring a clean 4-step horizontal process workflow cards layout that matches Style A perfectly with accurate Chinese text.",
+        "recorded_at": "2026-06-25T14:40:51Z"
+      }
     },
     {
       "slide_id": "slide_33",
@@ -1459,5 +1459,5 @@
       "blocker": null
     }
   ],
-  "updated_at": "2026-06-25T14:32:52Z"
+  "updated_at": "2026-06-25T14:40:51Z"
 }
