@@ -1,0 +1,615 @@
+{
+  "deck_name": "AI_Grading_PPT",
+  "language": "Chinese",
+  "goal": "Explain how to construct and use AI-assisted grading systems for high school science lab reports under the 108 Curriculum.",
+  "deck_context": {
+    "source_summary": "臺北市麗山高中林獻升老師研發的 AI 輔助高中自然科學探究與實作課程實驗報告評閱與學習評量系統建置實務。",
+    "core_claim": "AI 可以顯著減輕教師批改負荷，但必須置於以教師為主體的人類參與迴圈（HITL）中，確保教學主體性。",
+    "canonical_terms": [
+      "探究與實作",
+      "評量規準",
+      "AI Agent",
+      "提示詞工程",
+      "後設提示詞",
+      "人類參與迴圈",
+      "信心分數",
+      "字元錯誤率"
+    ]
+  },
+  "selected_image_backend": "scripts/image_gen.py --backend auto",
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "prompt_source": "A professional 16:9 presentation slide with clean, academic design (Theme: Sage Green and Slate Gray, Style A). Background is off-white and soft light-gray, with subtle gradient of sage green (#5a7a6a) and soft organic round shapes.",
+    "size": "1792x1024",
+    "quality": "standard",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+    "input_context_preparation": "inspect style references before generation; pass strict input assets with edit --image only when a slide job lists input_images",
+    "handoff_rule": "Subagents must use this same backend/tool/config; use generate for new slides unless the assigned job has strict input_images or is a repair."
+  },
+  "style": {
+    "name": "清爽專業自然風 (Style A)",
+    "visual_direction": "clean, professional, academic, natural science training presentation",
+    "color_palette": "Sage green (#5a7a6a) and soft light-green gradient as theme colors. Deep slate gray (#2d3748) for primary text. Amber (#b8894a) for tags and highlights. Soft light gray or off-white background with minimal card structures.",
+    "typography": "Elegant Chinese Serif (Songti) for titles, clean Sans-serif (Heiti) for body text and bullet points."
+  },
+  "approved_style_reference": {
+    "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+    "role": "approved sample slide style reference",
+    "fidelity": "match style only; do not copy layout or content"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "封面",
+      "role": "cover",
+      "intent": "Open the presentation with an elegant title slide.",
+      "key_points": [
+        "AI 輔助高中自然科學探究與實作",
+        "實驗報告評閱與學習評量之深度分析與系統建構",
+        "臺北市麗山高中 林獻升老師 研發成果與實務指南"
+      ],
+      "layout": {
+        "composition": "large centered titles with soft sage green gradient background"
+      },
+      "visual_elements": {
+        "main_visual": "elegant serif title text with minimal horizontal divider line"
+      }
+    },
+    {
+      "number": 2,
+      "title": "簡報目錄與學習地圖",
+      "role": "agenda",
+      "intent": "Provide an overview of the presentation's seven core units.",
+      "key_points": [
+        "單元一：108 課綱與科學評量轉型",
+        "單元二：生成式 AI 模型之效能剖析",
+        "單元三：評量規準（Rubrics）數位化建構",
+        "單元四：AI 代理程式（AI Agent）建置實務",
+        "單元五：系統提示詞工程與推理機制",
+        "單元六：AI 幻覺管控與科學檢索安全",
+        "單元七：人類參與迴圈（HITL）與教育倫理"
+      ],
+      "layout": {
+        "composition": "agenda list with numbers or soft card indicators"
+      },
+      "visual_elements": {
+        "main_visual": "multi-row list with amber-accented unit numbers"
+      }
+    },
+    {
+      "number": 3,
+      "title": "108 課綱的科學教育革命",
+      "role": "concept explanation",
+      "intent": "Explain the educational context and paradigm shift.",
+      "key_points": [
+        "核心轉移：從傳統的知識灌輸正式轉向『素養導向實踐歷程』",
+        "學習目標：建立高層次獨立思考、探究精神與理性參與公眾決策之未來公民",
+        "實踐路徑：強調整合性的科學實作活動與論證過程"
+      ],
+      "layout": {
+        "composition": "main concept left, supporting points right"
+      },
+      "visual_elements": {
+        "main_visual": "concept bubble or icon representing scientific inquiry"
+      }
+    },
+    {
+      "number": 4,
+      "title": "探究與實作的核心學習重點",
+      "role": "process",
+      "intent": "Show the dual-dimension structure of the curriculum.",
+      "key_points": [
+        "雙維度架構：探究學習內容與實作學習內容",
+        "探究認知歷程：發現問題、規劃研究、論證建模、表達分享",
+        "實作操作維度：觀察、測量、資料蒐集分析、歸納解釋、論證與作結論"
+      ],
+      "layout": {
+        "composition": "two-column parallel comparison cards"
+      },
+      "visual_elements": {
+        "main_visual": "two primary column blocks, sage green vs soft amber"
+      }
+    },
+    {
+      "number": 5,
+      "title": "評量轉型的巨大挑戰",
+      "role": "concept explanation",
+      "intent": "Highlight why summative assessment fails in this curriculum.",
+      "key_points": [
+        "標準化評量失效：選擇題無法反映學生的開放式思考與探究軌跡",
+        "形成性評量崛起：充滿手寫算式、不規則圖表與論證的形成性材料成為核心",
+        "學生作業異質性：手寫實驗紀錄本、學習單非選問答、數千字期末實驗報告"
+      ],
+      "layout": {
+        "composition": "three horizontal cards showing different file types"
+      },
+      "visual_elements": {
+        "main_visual": "three vertical icon cards representing logbook, worksheet, and report"
+      }
+    },
+    {
+      "number": 6,
+      "title": "教師面臨的認知壓力與痛點",
+      "role": "summary",
+      "intent": "Explain the high cognitive load on teachers.",
+      "key_points": [
+        "深度診斷負荷：需要針對報告的邏輯、數據與誤差分析進行細緻分析",
+        "個別化回饋需求：提供學生能修正認知的鷹架，而非冷冰冰的分數",
+        "教師負荷瓶頸：班級人數多、批改時間長，阻礙了形成性評量的推廣"
+      ],
+      "layout": {
+        "composition": "pain-point highlighted list"
+      },
+      "visual_elements": {
+        "main_visual": "warning indicator with detailed bullet points"
+      }
+    },
+    {
+      "number": 7,
+      "title": "主流 AI 模型教育評量效能比較",
+      "role": "data evidence",
+      "intent": "Show the empirical comparison table from the paper.",
+      "key_points": [
+        "模型對比：GPT-5、Claude Opus 4.7、Gemini 3.0 在多模態評量場景的實證數據對比。",
+        "Required images: [模型比較表] (assets/AI輔改1.png)"
+      ],
+      "layout": {
+        "composition": "full-bleed static infographic image"
+      },
+      "sample_approved": true
+    },
+    {
+      "number": 8,
+      "title": "多模態手寫辨識技術突破",
+      "role": "concept explanation",
+      "intent": "Explain the CER metrics and the OCR division of labor.",
+      "key_points": [
+        "OCR 技術分水嶺：通用視覺語言模型（VLMs）已超越專用的歷史文本辨識（HTR）模型",
+        "實證手寫字元錯誤率（CER）：GPT-5 (~1.22%)、Claude Opus 4.7 (~1.31%)、Gemini 3.0 (~1.44%)"
+      ],
+      "layout": {
+        "composition": "two-column: description left, three metric cards right"
+      },
+      "sample_approved": true
+    },
+    {
+      "number": 9,
+      "title": "Gemini 3.0 於手寫紀錄的湧現推理",
+      "role": "concept explanation",
+      "intent": "Detail Gemini's strengths in parsing messy logbooks.",
+      "key_points": [
+        "凌亂手寫克星：Gemini 3.0 在處理多頁混合文件、極潦草邊緣註解與不規則表格時最強",
+        "湧現推理校正：能利用文件內的數據趨勢或公式恆等邏輯，自動校正與推導模糊字跡",
+        "限制與降級：乾淨文本辨識率約 90%，但極混亂或塗改區塊會降至 70%~84%"
+      ],
+      "layout": {
+        "composition": "main visual left, details right"
+      },
+      "visual_elements": {
+        "main_visual": "logbook photo placeholder or handwriting icon"
+      }
+    },
+    {
+      "number": 10,
+      "title": "Claude 在長文本與學術邏輯的統治優勢",
+      "role": "concept explanation",
+      "intent": "Explain why Claude is ideal for long scientific reports.",
+      "key_points": [
+        "思考型定位：Claude 適合長文撰寫、複雜內容整理與策略性邏輯思考",
+        "高等教育評估：在醫學與牙醫等高度專業領域的基準測試中準確率最高（約 91.5% 至 95%）",
+        "適用場景：長篇期末報告、論證邏輯分析、學習單問答語意剖析"
+      ],
+      "layout": {
+        "composition": "left-aligned text blocks with clean horizontal dividers"
+      },
+      "visual_elements": {
+        "main_visual": "logical map of a report or document flow"
+      }
+    },
+    {
+      "number": 11,
+      "title": "ChatGPT (GPT-5) 在數理與程式碼推理的霸主地位",
+      "role": "concept explanation",
+      "intent": "Showcase ChatGPT's dominant coding and math capabilities.",
+      "key_points": [
+        "數學推理巔峰：MATH 基準測試達 98.2% 準確率",
+        "程式代碼檢閱：HumanEval 基準測試達 95.0% 準確率",
+        "最佳適用場景：涉及複雜微積分推導、統計誤差分析或 Python 數據繪圖代碼的實驗報告"
+      ],
+      "layout": {
+        "composition": "two large score cards with descriptive text below"
+      },
+      "visual_elements": {
+        "main_visual": "math symbol and coding brackets"
+      }
+    },
+    {
+      "number": 12,
+      "title": "異質性分流策略建議",
+      "role": "comparison",
+      "intent": "Provide a practical model routing guide for teachers.",
+      "key_points": [
+        "自然科批改分流：依學生作業特性選擇最適合的模型",
+        "數理定量計算：選用 ChatGPT (GPT-5) 作為推理引擎",
+        "長文與論證邏輯：選用 Claude 3.5/4 進行嚴謹結構化評分",
+        "原始手寫與多頁表格：選用 Gemini 3.0 以手機拍照直接辨識"
+      ],
+      "layout": {
+        "composition": "three parallel comparison boxes side-by-side"
+      },
+      "visual_elements": {
+        "main_visual": "three vertical column cards, each with an icon"
+      }
+    },
+    {
+      "number": 13,
+      "title": "評量規準的數位化與鷹架建置",
+      "role": "concept explanation",
+      "intent": "Introduce digitization of rubrics and student feedback loop.",
+      "key_points": [
+        "數位化轉型：利用 AI 輔助從零建構符合 108 課綱學習指標的評分矩陣",
+        "雙向良性循環：精心設計的 AI 助理回饋引導學生逐步修正作業，減輕教師負擔",
+        "Required images: [評分規準結構] (assets/AI輔改2.png)"
+      ],
+      "layout": {
+        "composition": "full-bleed static infographic image"
+      },
+      "sample_approved": true
+    },
+    {
+      "number": 14,
+      "title": "利用 XML 結構建構客製化規準",
+      "role": "process",
+      "intent": "Explain the benefit of XML formatting for LLM parsing.",
+      "key_points": [
+        "結構化約束：採用 XML 標籤如 <rubric_template>, <criteria>, <performance_levels>",
+        "XML 核心價值：確保規準對齊學習目標，並利於 AI 讀取與維持一致性",
+        "教師微調：AI 生成規準草稿後，必須由教師依據具體課程目標微調"
+      ],
+      "layout": {
+        "composition": "code-block container next to flowchart"
+      },
+      "visual_elements": {
+        "main_visual": "minimal XML tag illustration"
+      }
+    },
+    {
+      "number": 15,
+      "title": "四大表現層級行為描述語設計",
+      "role": "data evidence",
+      "intent": "Show the four-level scoring scale and guidelines.",
+      "key_points": [
+        "等級與配分：精熟（90-100分）、發展中（75-89分）、起始（60-74分）、未達標（0-59分）",
+        "行為描述語要求：必須具備可被機器理解的『具體行為描述』，避免使用模糊語意",
+        "標準對齊：各層級需緊扣科學假設、數據精度、誤差探討與論證邏輯"
+      ],
+      "layout": {
+        "composition": "4-column grid layout"
+      },
+      "visual_elements": {
+        "main_visual": "four vertical level cards, color-coded from green to red"
+      }
+    },
+    {
+      "number": 16,
+      "title": "將規準「參數化」嵌入批閱提示詞",
+      "role": "concept explanation",
+      "intent": "Highlight the difference between generic and parameterized prompts.",
+      "key_points": [
+        "拒絕空泛批改：僅要求 AI '批改' 會導致評分尺度隨機偏移與目標脫節",
+        "成功指標參數化：將規準配分（如研究假設 4 分、數據論證 12 分、誤差分析 4 分）直接寫入指令流",
+        "原話引用：強制 AI 對於每一項評分必須引用學生報告的原話作為佐證"
+      ],
+      "layout": {
+        "composition": "before/after split comparison cards"
+      },
+      "visual_elements": {
+        "main_visual": "generic prompt card vs parameterized prompt card"
+      }
+    },
+    {
+      "number": 17,
+      "title": "教師試批流程與基準印象 (Baseline Impression)",
+      "role": "process",
+      "intent": "Guide teachers on how to calibrate the AI before class-wide grading.",
+      "key_points": [
+        "試批機制：在全班批改前，先挑選高、中、低不同成就水準的 3-5 份報告讓 AI 試批",
+        "基準建立：讓 AI 對該次作業建立基準印象，教師可微調提示詞中的模糊地帶",
+        "教師智慧對齊：與資深教師批改考卷前先快速瀏覽全班作答以掌握整體水準的模式一致"
+      ],
+      "layout": {
+        "composition": "3-step horizontal workflow"
+      },
+      "visual_elements": {
+        "main_visual": "three step cards with arrows"
+      }
+    },
+    {
+      "number": 18,
+      "title": "單次對話的侷限與 AI Agent 架構",
+      "role": "concept explanation",
+      "intent": "Show why single prompts fail and why agentic workflows succeed.",
+      "key_points": [
+        "單次對話缺點：無法處理複雜多步推理，缺乏背景知識與記憶",
+        "AI Agent 定義：具備專屬知識庫、長期記憶與多步推理，可呼叫外部工具進行自我調整與反思",
+        "現有平台支援：Claude Projects, OpenAI Custom GPTs, Google Gemini Gems"
+      ],
+      "layout": {
+        "composition": "problem vs solution comparison"
+      },
+      "visual_elements": {
+        "main_visual": "icon for single dialog box crossed out vs agent network icon"
+      }
+    },
+    {
+      "number": 19,
+      "title": "Claude Projects 專屬工作區建置",
+      "role": "architecture",
+      "intent": "Explain the features of Claude Projects for grading.",
+      "key_points": [
+        "記憶庫優勢：20 萬代幣超大上下文視窗，一次打包上傳整門課程背景文件",
+        "知識庫上傳：課綱、標準答案、詳細規準、迷思概念清單、優秀範例，解決『冷啟動問題』",
+        "Artifacts 展示：直接生成排版精美的分析 Word 文件、網頁或圖表"
+      ],
+      "layout": {
+        "composition": "central node architecture diagram"
+      },
+      "visual_elements": {
+        "main_visual": "project folder central icon pointing to context and templates"
+      }
+    },
+    {
+      "number": 20,
+      "title": "OpenAI Custom GPTs 限制與最佳實踐",
+      "role": "data evidence",
+      "intent": "Outline Custom GPTs limits and Markdown formatting tip.",
+      "key_points": [
+        "硬性系統限制：每個 GPTs 知識庫最多上傳 20 個檔案，總容量上限 512MB，Instructions 上限 8000 字元",
+        "格式最佳實踐：優先使用 Markdown 格式（非 PDF）上傳規準，避免 RAG 文字切片格式錯亂",
+        "設定原則：在指示中明文限定 AI 僅能根據知識庫標準給分，嚴禁憑空引用外部知識"
+      ],
+      "layout": {
+        "composition": "bullet list with dark red warning banner or box"
+      },
+      "visual_elements": {
+        "main_visual": "limitations checklist or table"
+      }
+    },
+    {
+      "number": 21,
+      "title": "知識庫圖片盲區與 Gemini Gems 整合",
+      "role": "concept explanation",
+      "intent": "Highlight the image retrieval limitation in custom bots and introduce Gems.",
+      "key_points": [
+        "檢索盲區警告：Custom GPTs 背景知識庫中的圖片會被系統完全忽略，手寫圖表應即時對話上傳",
+        "Gemini Gems 優勢：深度整合 Google Classroom 與 Google Drive，摩擦力極低",
+        "手機拍照流：教師用手機將手寫紀錄本拍照直接上傳，Gemini 進行結構化數據提取與驗證"
+      ],
+      "layout": {
+        "composition": "left side warning, right side Gem flow illustration"
+      },
+      "visual_elements": {
+        "main_visual": "mobile camera scanning logbook"
+      }
+    },
+    {
+      "number": 22,
+      "title": "四階段系統提示詞架構 (RTCO)",
+      "role": "architecture",
+      "intent": "Provide the overall visual overview of the RTCO framework.",
+      "key_points": [
+        "提示詞工程化：將 AI 的行為政策寫成嚴謹的工程規範，避免玩具級指示。",
+        "Required images: [RTCO提示詞工程] (assets/AI輔改3.png)"
+      ],
+      "layout": {
+        "composition": "full-bleed static infographic image"
+      },
+      "sample_approved": true
+    },
+    {
+      "number": 23,
+      "title": "系統提示詞工程的四階段強制性架構 (RTCO)",
+      "role": "concept explanation",
+      "intent": "Break down Role, Task, Constraints, and Output Format.",
+      "key_points": [
+        "角色定義 (Role)：賦予 20 年高中自然科教師身份，採用嚴謹、指導性的學術語氣",
+        "任務拆解 (Task)：以編號拆解獨立認知步驟（辨識假設 → 數據檢核 → 誤差評估）",
+        "約束條件 (Constraints)：重複強調絕對規則，如『嚴禁過度推論學生未寫出的意圖』",
+        "輸出格式 (Output Format)：規定 Markdown 分數表格、具體條列修改建議與信心分數"
+      ],
+      "layout": {
+        "composition": "four-quadrant block layout"
+      },
+      "visual_elements": {
+        "main_visual": "four cards labeled R, T, C, O"
+      }
+    },
+    {
+      "number": 24,
+      "title": "後設提示詞（Meta-Prompting）五步驟自我反思",
+      "role": "process",
+      "intent": "Show the five-step reasoning chain (Analysis -> Strategy -> Exec -> Review -> Ans).",
+      "key_points": [
+        "打破黑盒子：強制 AI 在給出分數前產生可見的思考草稿區",
+        "五步驟思考鏈：分析（Analysis）→ 策略（Approach）→ 執行（Execution）→ 審查（Review，核對約束）→ 最終答案",
+        "信心分數機制：強制輸出 0.0-1.0 信心分數，低於 0.7 自動標記"
+      ],
+      "layout": {
+        "composition": "5-step sequential train layout"
+      },
+      "visual_elements": {
+        "main_visual": "horizontal train of five interconnected cards"
+      }
+    },
+    {
+      "number": 25,
+      "title": "代理工作流（Agent Workflow）自動化架構",
+      "role": "architecture",
+      "intent": "Show a multi-node workflow schematic with LangGraph/LangChain.",
+      "key_points": [
+        "工作流引擎：使用 LangChain 或 LangGraph 建構具備『規劃-執行-驗證』的多節點工作流",
+        "規劃與評分節點：規劃節點閱讀題目與規準，評分節點進行解析與試算給分",
+        "外部工具調用：驗證節點被授權執行指令執行協議，在動作後等待結果"
+      ],
+      "layout": {
+        "composition": "three-node flow chart"
+      },
+      "visual_elements": {
+        "main_visual": "nodes for Planner, Scorer, and Verifier with connecting loops"
+      }
+    },
+    {
+      "number": 26,
+      "title": "外部工具事實查核 (Fact-checking)",
+      "role": "process",
+      "intent": "Explain the verifier node's lookup logic.",
+      "key_points": [
+        "查核機制：當學生在報告中引用新穎數據或外部文獻時，系統自動觸發『驗證節點』",
+        "檢索查證：呼叫 Google Search / DuckDuckGo 進行事實查核，確認無誤後才完成評分確認",
+        "價值：大幅降低高風險學術評估時的錯誤率與盲目給分現象"
+      ],
+      "layout": {
+        "composition": "query and check animation layout"
+      },
+      "visual_elements": {
+        "main_visual": "web query icon pointing to verification checkmark"
+      }
+    },
+    {
+      "number": 27,
+      "title": "AI 幻覺在科學評量中的危機",
+      "role": "concept explanation",
+      "intent": "Explain the danger of hallucinations in educational scoring.",
+      "key_points": [
+        "幻覺定義：AI 充滿自信地生成看似合理但實際上錯誤或虛假的陳述",
+        "科學傷害：針對學生正確的物理化學推導給出錯誤批評，虛構科學常數或原理",
+        "教育後果：嚴重打擊學生的學習信心，扭曲對科學真理的認知"
+      ],
+      "layout": {
+        "composition": "split text layout with warning highlight"
+      },
+      "visual_elements": {
+        "main_visual": "warning card next to academic report icon"
+      }
+    },
+    {
+      "number": 28,
+      "title": "檢索增強生成（RAG）的失效與偏誤",
+      "role": "concept explanation",
+      "intent": "Detail the 17%-33% hallucination rate even in RAG systems.",
+      "key_points": [
+        "一般檢索的盲區：通用 AI 背景搜尋是『一般搜尋』而非精確的『科學檢索』，拉入大量雜訊文件",
+        "科學證據深埋度：科學文獻證據往往深埋在方法論子章節或附錄圖表中，易被忽略",
+        "實證幻覺率：史丹佛大學研究指出，即使是昂貴且聲稱無幻覺的專業法律/科學系統依然存在 17%-33% 幻覺率"
+      ],
+      "layout": {
+        "composition": "dark background card showing search noise vs clear signal"
+      },
+      "visual_elements": {
+        "main_visual": "RAG retriever flow with error marker"
+      }
+    },
+    {
+      "number": 29,
+      "title": "抗幻覺護欄設計與參數調校",
+      "role": "summary",
+      "intent": "Provide concrete prompt guardrails and parameter tweaks.",
+      "key_points": [
+        "行為邊界限制：在提示詞中強制模型扮演嚴謹的科學審查員，僅限依據教科書範圍回覆",
+        "不確定性指令護欄：明確指示『若找不到證據，請回答“資訊不足無法判定”，絕對禁止推測或猜測』",
+        "降低溫度值 (Temperature)：將溫度值下調至 0.3-0.5，減少隨機性，產生保守且基於事實的確定性回應"
+      ],
+      "layout": {
+        "composition": "parameter table next to guardrail highlights"
+      },
+      "visual_elements": {
+        "main_visual": "dashboard sliders for temperature and top_p"
+      }
+    },
+    {
+      "number": 30,
+      "title": "工業自動化陷阱與教育倫理",
+      "role": "concept explanation",
+      "intent": "Warn against reducing teachers to mere rubber stamps.",
+      "key_points": [
+        "自動化偏誤：避免將人類參與迴圈（HITL）當作安慰劑，更不能將教師降級為 AI 決策的點擊批准工具",
+        "階層隱喻危險：機器主導、人類跟隨的模式會嚴重侵蝕教育的本質",
+        "教學主體性奪回：教學判斷（Pedagogical Judgement）是評量的絕對基礎，而非備用安全閥"
+      ],
+      "layout": {
+        "composition": "balanced scale representing human judgment vs machine automation"
+      },
+      "visual_elements": {
+        "main_visual": "human icon in center, larger than AI robot icon"
+      }
+    },
+    {
+      "number": 31,
+      "title": "教學判斷的絕對基礎性",
+      "role": "summary",
+      "intent": "Establish the division of labor between AI and the teacher.",
+      "key_points": [
+        "教師無可取代：教師對學生學習歷程的深度理解、溫暖個性化的教育同理心是評量的基石",
+        "人機合理分工：AI 負責規則套用、拼寫/計算等數據比對；教師負責最終判斷與溫暖回饋",
+        "邊緣案例處理：信心分數低於 0.7 的批改結果必須由教師人工複審，教師專業永遠優先於 AI 推論"
+      ],
+      "layout": {
+        "composition": "highlight card for pedagogical judgment"
+      },
+      "visual_elements": {
+        "main_visual": "certified shield or teacher stamp icon"
+      }
+    },
+    {
+      "number": 32,
+      "title": "HITL 四階段遞迴工作流",
+      "role": "process",
+      "intent": "Show the visual flow chart of the HITL grading cycle.",
+      "key_points": [
+        "人機協同工作流：以人為本的 modern document AI 工作流。",
+        "Required images: [HITL工作流] (assets/AI輔改4.png)"
+      ],
+      "layout": {
+        "composition": "full-bleed static infographic image"
+      },
+      "sample_approved": true
+    },
+    {
+      "number": 33,
+      "title": "HITL 四階段遞迴工作流實踐",
+      "role": "process",
+      "intent": "Outline Capture, Analysis, Intervention, and Feedback.",
+      "key_points": [
+        "文件擷取 (Capture)：學生將手寫紀錄拍照或上傳數位報告至平台",
+        "自動化分析 (Analysis)：AI Agent 多模態解析、特徵擷取，套用規準進行試算給分與邏輯檢核",
+        "人類介入 (Intervention)：系統標記低信心分數、異常評分等案例，發送給教師進行最終檢閱與裁決",
+        "回饋迴圈 (Feedback Loop)：教師修正決策與評語重新輸入系統，微調與優化模型未來的批改基準"
+      ],
+      "layout": {
+        "composition": "4-card horizontal cyclic arrow layout"
+      },
+      "visual_elements": {
+        "main_visual": "four cyclic cards labeled STEP 1 to STEP 4"
+      }
+    },
+    {
+      "number": 34,
+      "title": "典範移轉：人機協同的科學教育未來",
+      "role": "summary",
+      "intent": "Final call to action and vision for 108 Curriculum science grading.",
+      "key_points": [
+        "解放教師負荷：將繁重行政與計算比對工作交給 AI，釋放寶貴時間心力",
+        "專注高階引導：教師將精力專注於引導學生的科學高階思維、批判論證與個性化同理心引導",
+        "適性揚才：落實 108 課綱的崇高願景，讓技術服務於真實的教育價值"
+      ],
+      "layout": {
+        "composition": "inspirational conclusion panel with large quote"
+      },
+      "visual_elements": {
+        "main_visual": "future vision icon or graduation metaphor"
+      }
+    }
+  ]
+}

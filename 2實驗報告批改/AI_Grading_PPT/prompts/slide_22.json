@@ -1,0 +1,51 @@
+{
+  "slide": 22,
+  "title": "四階段系統提示詞架構 (RTCO)",
+  "prompt": "# Codex PPT Slide Image Prompt\n\n## Canvas\n{\n  \"type\": \"16:9 full-slide PowerPoint image\",\n  \"language\": \"Chinese\",\n  \"slide_number\": 22,\n  \"render_slide_number\": false\n}\n\n## Deck Goal\nExplain how to construct and use AI-assisted grading systems for high school science lab reports under the 108 Curriculum.\n\n## Required Background\n{\n  \"deck_context\": {\n    \"source_summary\": \"臺北市麗山高中林獻升老師研發的 AI 輔助高中自然科學探究與實作課程實驗報告評閱與學習評量系統建置實務。\",\n    \"core_claim\": \"AI 可以顯著減輕教師批改負荷，但必須置於以教師為主體的人類參與迴圈（HITL）中，確保教學主體性。\",\n    \"canonical_terms\": [\n      \"探究與實作\",\n      \"評量規準\",\n      \"AI Agent\",\n      \"提示詞工程\",\n      \"後設提示詞\",\n      \"人類參與迴圈\",\n      \"信心分數\",\n      \"字元錯誤率\"\n    ]\n  }\n}\n\n## Global Style\n{\n  \"name\": \"清爽專業自然風 (Style A)\",\n  \"visual_direction\": \"clean, professional, academic, natural science training presentation\",\n  \"color_palette\": \"Sage green (#5a7a6a) and soft light-green gradient as theme colors. Deep slate gray (#2d3748) for primary text. Amber (#b8894a) for tags and highlights. Soft light gray or off-white background with minimal card structures.\",\n  \"typography\": \"Elegant Chinese Serif (Songti) for titles, clean Sans-serif (Heiti) for body text and bullet points.\"\n}\n\n## Style Reference Images To Inspect\n\n- Style Reference 1: /Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png — approved sample slide style reference; match style only; do not copy layout or content\n\nInspect these images before generation to understand the approved deck style. Do not pass them to the image backend as input images unless this slide explicitly lists them under Input Images.\n\n## Slide\n{\n  \"number\": 22,\n  \"title\": \"四階段系統提示詞架構 (RTCO)\",\n  \"role\": \"architecture\",\n  \"intent\": \"Provide the overall visual overview of the RTCO framework.\"\n}\n\n## Text\n{\n  \"title\": \"四階段系統提示詞架構 (RTCO)\",\n  \"key_points\": [\n    \"提示詞工程化：將 AI 的行為政策寫成嚴謹的工程規範，避免玩具級指示。\",\n    \"Required images: [RTCO提示詞工程] (assets/AI輔改3.png)\"\n  ],\n  \"speaker_focus\": null\n}\n\n## Layout\n{\n  \"composition\": \"full-bleed static infographic image\"\n}\n\n## Style Reference Rule\nUse the approved sample-slide style reference as visual guidance only. Match its palette, typography mood, density, texture, and overall visual identity. Do not copy its exact layout unless this slide's layout explicitly asks for it. For normal new slide generation, use the generate endpoint and express the inspected style through the prompt instead of attaching the sample as an edit input.\n\n## Universal Constraints\n- The final image itself must contain the title and key points.\n- Render Chinese text exactly and legibly; avoid garbled characters.\n- Keep the confirmed deck style consistent while varying layout by slide role.\n- No watermark, unrelated logo, or extra slide number.\n",
+  "out": "slide_22.png",
+  "candidate_out": "drafts/slide_22_candidate.png",
+  "input_images": [],
+  "style_reference_images": [
+    {
+      "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+      "role": "approved sample slide style reference",
+      "fidelity": "match style only; do not copy layout or content"
+    }
+  ],
+  "requires_context_images": false,
+  "expected_generation_mode": "generate",
+  "expected_backend": "scripts/image_gen.py --backend auto",
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "prompt_source": "A professional 16:9 presentation slide with clean, academic design (Theme: Sage Green and Slate Gray, Style A). Background is off-white and soft light-gray, with subtle gradient of sage green (#5a7a6a) and soft organic round shapes.",
+    "size": "1792x1024",
+    "quality": "standard",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+    "input_context_preparation": "inspect style references before generation; pass strict input assets with edit --image only when a slide job lists input_images",
+    "handoff_rule": "Subagents must use this same backend/tool/config; use generate for new slides unless the assigned job has strict input_images or is a repair."
+  },
+  "generation_contract": {
+    "must_use_selected_image_backend": true,
+    "must_match_sample_generation_method": true,
+    "default_mode": "generate",
+    "use_edit_only_when": [
+      "input_images is non-empty",
+      "repairing an existing generated slide"
+    ],
+    "must_inspect_style_reference_images": true,
+    "forbidden_final_image_methods": [
+      "local drawing/rendering scripts",
+      "Pillow-generated slides",
+      "SVG/HTML/CSS/canvas screenshots",
+      "python-pptx/PptxGenJS/native PPT layout screenshots",
+      "manually composited text/image overlays"
+    ],
+    "must_return": [
+      "backend_used",
+      "selected_source",
+      "qa_note"
+    ]
+  }
+}

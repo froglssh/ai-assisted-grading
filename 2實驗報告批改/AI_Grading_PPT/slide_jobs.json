@@ -1,0 +1,1463 @@
+{
+  "run_status": "slides_recorded",
+  "deck_name": "AI_Grading_PPT",
+  "selected_backend": "scripts/image_gen.py --backend auto",
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "prompt_source": "A professional 16:9 presentation slide with clean, academic design (Theme: Sage Green and Slate Gray, Style A). Background is off-white and soft light-gray, with subtle gradient of sage green (#5a7a6a) and soft organic round shapes.",
+    "size": "1792x1024",
+    "quality": "standard",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+    "input_context_preparation": "inspect style references before generation; pass strict input assets with edit --image only when a slide job lists input_images",
+    "handoff_rule": "Subagents must use this same backend/tool/config; use generate for new slides unless the assigned job has strict input_images or is a repair."
+  },
+  "max_concurrent_slides": 6,
+  "slides": [
+    {
+      "slide_id": "slide_01",
+      "number": 1,
+      "title": "封面",
+      "job": "prompts/slide_01.json",
+      "out": "origin_image/slide_01.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "ee8e896c-1640-4aab-bb4b-65dd31830d87",
+        "agent_nickname": "Slide01",
+        "prompt": "prompts/slide_01.json",
+        "prompt_sha256": "b9815baedebec5fde29b5361295162acea322b8aeb8745c4203a04180751ac04",
+        "dispatched_at": "2026-06-25T14:24:19Z"
+      },
+      "result": {
+        "agent_id": "ee8e896c-1640-4aab-bb4b-65dd31830d87",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_01_candidate.png",
+        "selected_source_sha256": "dc59e1d257b0fd3b1d9ca43572aa2ca197a34728113f84154d62caaab50e36a3",
+        "final_image": "origin_image/slide_01.png",
+        "final_image_sha256": "dc59e1d257b0fd3b1d9ca43572aa2ca197a34728113f84154d62caaab50e36a3",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "The title slide (Slide 01) was successfully generated, featuring high-quality rendered Chinese serif text and matching the sage green theme.",
+        "recorded_at": "2026-06-25T14:25:27Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_02",
+      "number": 2,
+      "title": "簡報目錄與學習地圖",
+      "job": "prompts/slide_02.json",
+      "out": "origin_image/slide_02.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "74e59141-5565-49ae-bdac-e453e4fc9d55",
+        "agent_nickname": "Slide02",
+        "prompt": "prompts/slide_02.json",
+        "prompt_sha256": "aeab142370f49ec53387664a9d435a2a68676d6f36725e48955f5c17cf604110",
+        "dispatched_at": "2026-06-25T14:24:19Z"
+      },
+      "result": {
+        "agent_id": "74e59141-5565-49ae-bdac-e453e4fc9d55",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_02_candidate.png",
+        "selected_source_sha256": "53c472bf2a00f89c1d1d1c23d1def7c6f3c1f0433a6b6d73399038df8938e0a7",
+        "final_image": "origin_image/slide_02.png",
+        "final_image_sha256": "53c472bf2a00f89c1d1d1c23d1def7c6f3c1f0433a6b6d73399038df8938e0a7",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 02 agenda image generated successfully using the codex-oauth backend, containing all 7 modules with clean typography and layout matching the style guide.",
+        "recorded_at": "2026-06-25T14:25:52Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_03",
+      "number": 3,
+      "title": "108 課綱的科學教育革命",
+      "job": "prompts/slide_03.json",
+      "out": "origin_image/slide_03.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "919eeb98-7e14-4484-9a71-01872e86c724",
+        "agent_nickname": "Slide03",
+        "prompt": "prompts/slide_03.json",
+        "prompt_sha256": "a86302d6bb1a92afcf09b2dbc7297c23739a89df638380e6c40fc9fb9d57f6a0",
+        "dispatched_at": "2026-06-25T14:24:19Z"
+      },
+      "result": {
+        "agent_id": "919eeb98-7e14-4484-9a71-01872e86c724",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_03_candidate.png",
+        "selected_source_sha256": "bc37891fdfff4e5d5b1cfac55d73db8e57391d954d423cb70c5e7a443c3ff87d",
+        "final_image": "origin_image/slide_03.png",
+        "final_image_sha256": "bc37891fdfff4e5d5b1cfac55d73db8e57391d954d423cb70c5e7a443c3ff87d",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 03 successfully generated with a concept bubble on the left and supporting points on the right, matching the Sage Green visual style.",
+        "recorded_at": "2026-06-25T14:25:44Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_04",
+      "number": 4,
+      "title": "探究與實作的核心學習重點",
+      "job": "prompts/slide_04.json",
+      "out": "origin_image/slide_04.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "08dc9fc4-cc18-42fd-9ad1-ab9d5534d46c",
+        "agent_nickname": "Slide04",
+        "prompt": "prompts/slide_04.json",
+        "prompt_sha256": "b5f3f6a3137b7677714dbcc1b19a77d62c965bf670fd7580903f94f04bde9db9",
+        "dispatched_at": "2026-06-25T14:24:20Z"
+      },
+      "result": {
+        "agent_id": "08dc9fc4-cc18-42fd-9ad1-ab9d5534d46c",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_04_candidate.png",
+        "selected_source_sha256": "cba0688ec65d9413077b58a15e3f6f549776610cf4a0e2c87869bb5968f8e63d",
+        "final_image": "origin_image/slide_04.png",
+        "final_image_sha256": "cba0688ec65d9413077b58a15e3f6f549776610cf4a0e2c87869bb5968f8e63d",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 04 image generated successfully with correct two-column cards structure matching Style A style reference.",
+        "recorded_at": "2026-06-25T14:25:49Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_05",
+      "number": 5,
+      "title": "評量轉型的巨大挑戰",
+      "job": "prompts/slide_05.json",
+      "out": "origin_image/slide_05.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "67a74728-7105-43eb-95ef-f08a7765a58e",
+        "agent_nickname": "Slide05",
+        "prompt": "prompts/slide_05.json",
+        "prompt_sha256": "42b3901f365224910866622871412dd1ad93dd47664c0acae60af7aeb5990948",
+        "dispatched_at": "2026-06-25T14:24:20Z"
+      },
+      "result": {
+        "agent_id": "67a74728-7105-43eb-95ef-f08a7765a58e",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_05_candidate.png",
+        "selected_source_sha256": "0ea247fe1bea612329b42b0582a18486f7fd90c51a28c98a1bb0a96046f2a9aa",
+        "final_image": "origin_image/slide_05.png",
+        "final_image_sha256": "0ea247fe1bea612329b42b0582a18486f7fd90c51a28c98a1bb0a96046f2a9aa",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 05 was successfully generated, showing three cards for logbook, worksheet, and report with clear, readable Chinese text and styling matching the approved sample slide.",
+        "recorded_at": "2026-06-25T14:26:06Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_06",
+      "number": 6,
+      "title": "教師面臨的認知壓力與痛點",
+      "job": "prompts/slide_06.json",
+      "out": "origin_image/slide_06.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "9640e480-609c-49e6-b121-72e1666734cf",
+        "agent_nickname": "Slide06",
+        "prompt": "prompts/slide_06.json",
+        "prompt_sha256": "4384c8098badd70d98b8f0cbdf93d5168bfbbb571a7cd1fd3ad269be637dc200",
+        "dispatched_at": "2026-06-25T14:24:20Z"
+      },
+      "result": {
+        "agent_id": "9640e480-609c-49e6-b121-72e1666734cf",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_06_candidate.png",
+        "selected_source_sha256": "d547aaec1a3a4d48ff1ef4e2835af6c070a081bdab043f6e79dcbd1901b48edb",
+        "final_image": "origin_image/slide_06.png",
+        "final_image_sha256": "d547aaec1a3a4d48ff1ef4e2835af6c070a081bdab043f6e79dcbd1901b48edb",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 06 generated successfully with correct Style A elements, clear card layout, and error-free Chinese typography.",
+        "recorded_at": "2026-06-25T14:25:37Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_07",
+      "number": 7,
+      "title": "主流 AI 模型教育評量效能比較",
+      "job": "prompts/slide_07.json",
+      "out": "origin_image/slide_07.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "parent",
+        "agent_nickname": "parent",
+        "prompt": "prompts/slide_07.json",
+        "prompt_sha256": "3753d3697cd015915dc8de096e3a065cf3006693472d8a86ff837966a845a127",
+        "dispatched_at": "2026-06-25T14:23:03Z"
+      },
+      "result": {
+        "agent_id": "parent",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_07.png",
+        "selected_source_sha256": "63de87bd35846a424afcd1926570f9809b0cbb317f642f5b60f086b9c0c10585",
+        "final_image": "origin_image/slide_07.png",
+        "final_image_sha256": "63de87bd35846a424afcd1926570f9809b0cbb317f642f5b60f086b9c0c10585",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Static infographic copied.",
+        "recorded_at": "2026-06-25T14:23:31Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_08",
+      "number": 8,
+      "title": "多模態手寫辨識技術突破",
+      "job": "prompts/slide_08.json",
+      "out": "origin_image/slide_08.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "accepted",
+      "dispatch": null,
+      "result": {
+        "final_image": "origin_image/slide_08.png",
+        "accepted_sample": true
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_09",
+      "number": 9,
+      "title": "Gemini 3.0 於手寫紀錄的湧現推理",
+      "job": "prompts/slide_09.json",
+      "out": "origin_image/slide_09.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "1a494588-a3d8-4aef-af84-b8aaf5f81404",
+        "agent_nickname": "Slide09",
+        "prompt": "prompts/slide_09.json",
+        "prompt_sha256": "623ba4bf5e53db8f127a55a3a336a4eedc78196184c5703e8ec949345ba9a46b",
+        "dispatched_at": "2026-06-25T14:25:34Z"
+      },
+      "result": {
+        "agent_id": "1a494588-a3d8-4aef-af84-b8aaf5f81404",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_09_candidate.png",
+        "selected_source_sha256": "f2b5d0822539f8dcccbf85e407128d3caa91ff9831138c5227c38ad4f9e0e3fd",
+        "final_image": "origin_image/slide_09.png",
+        "final_image_sha256": "f2b5d0822539f8dcccbf85e407128d3caa91ff9831138c5227c38ad4f9e0e3fd",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 09 generated successfully using scripts/image_gen.py, matching Style A with clear Chinese typography and consistent design.",
+        "recorded_at": "2026-06-25T14:27:07Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_10",
+      "number": 10,
+      "title": "Claude 在長文本與學術邏輯的統治優勢",
+      "job": "prompts/slide_10.json",
+      "out": "origin_image/slide_10.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "46bbbc7d-dac1-4521-a8e0-ece35f1d6f41",
+        "agent_nickname": "Slide10",
+        "prompt": "prompts/slide_10.json",
+        "prompt_sha256": "0cc7e20d92acb973ae2506aa7322b63aa2da9c0052dcb183c1acc74831f5db59",
+        "dispatched_at": "2026-06-25T14:25:44Z"
+      },
+      "result": {
+        "agent_id": "46bbbc7d-dac1-4521-a8e0-ece35f1d6f41",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_10_candidate.png",
+        "selected_source_sha256": "a5a81d6e1f96c676a5d4e40dd51832089438f22e7accd3239fa201f09f5e42f3",
+        "final_image": "origin_image/slide_10.png",
+        "final_image_sha256": "a5a81d6e1f96c676a5d4e40dd51832089438f22e7accd3239fa201f09f5e42f3",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Successfully generated slide 10 showcasing Claude's academic logic advantages with a clear document flow diagram, maintaining style consistency with the approved sample.",
+        "recorded_at": "2026-06-25T14:26:58Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_11",
+      "number": 11,
+      "title": "ChatGPT (GPT-5) 在數理與程式碼推理的霸主地位",
+      "job": "prompts/slide_11.json",
+      "out": "origin_image/slide_11.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "2148b401-7045-4114-bfff-97abffefc214",
+        "agent_nickname": "Slide11",
+        "prompt": "prompts/slide_11.json",
+        "prompt_sha256": "b0ad6e1c3a5f834b819845e05e1889eb5836b65dcd23d5ca1674874bfbcfd133",
+        "dispatched_at": "2026-06-25T14:26:06Z"
+      },
+      "result": {
+        "agent_id": "2148b401-7045-4114-bfff-97abffefc214",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_11_candidate.png",
+        "selected_source_sha256": "cfdb26c50a936a48a1c647a31e074b594d9ab283b416b06b7a3d177b4ce965f4",
+        "final_image": "origin_image/slide_11.png",
+        "final_image_sha256": "cfdb26c50a936a48a1c647a31e074b594d9ab283b416b06b7a3d177b4ce965f4",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 11 was successfully generated with high-quality math/coding symbols, clear Chinese text, and perfectly matching sage green style.",
+        "recorded_at": "2026-06-25T14:27:20Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_12",
+      "number": 12,
+      "title": "異質性分流策略建議",
+      "job": "prompts/slide_12.json",
+      "out": "origin_image/slide_12.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "6a2e9496-0104-4fb3-8107-ded01d0cbded",
+        "agent_nickname": "Slide12",
+        "prompt": "prompts/slide_12.json",
+        "prompt_sha256": "2e65f8fe52a5390f2a963c9cb88679e5a771a4e8973ce50ae751dd2d883250b5",
+        "dispatched_at": "2026-06-25T14:26:06Z"
+      },
+      "result": {
+        "agent_id": "6a2e9496-0104-4fb3-8107-ded01d0cbded",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_12_candidate.png",
+        "selected_source_sha256": "e7cdb78c0b456f3e95907c87cb3627805cb6a6b16ff53e986d31143ddffcb9c9",
+        "final_image": "origin_image/slide_12.png",
+        "final_image_sha256": "e7cdb78c0b456f3e95907c87cb3627805cb6a6b16ff53e986d31143ddffcb9c9",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 12 image successfully generated with high-quality three-column layout, correct Chinese text, and consistent sage green style matching the approved sample.",
+        "recorded_at": "2026-06-25T14:27:09Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_13",
+      "number": 13,
+      "title": "評量規準的數位化與鷹架建置",
+      "job": "prompts/slide_13.json",
+      "out": "origin_image/slide_13.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "parent",
+        "agent_nickname": "parent",
+        "prompt": "prompts/slide_13.json",
+        "prompt_sha256": "d4df8c58acfdf2eb328b596c383b0a1f0cd19511e1804caf0ccae547b2f5a6a6",
+        "dispatched_at": "2026-06-25T14:23:31Z"
+      },
+      "result": {
+        "agent_id": "parent",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_13.png",
+        "selected_source_sha256": "cbd0108d99ecd2256b3ee7c3b5632dd6223af94b2e43ae6e742efdea11438118",
+        "final_image": "origin_image/slide_13.png",
+        "final_image_sha256": "cbd0108d99ecd2256b3ee7c3b5632dd6223af94b2e43ae6e742efdea11438118",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Static infographic copied.",
+        "recorded_at": "2026-06-25T14:23:31Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_14",
+      "number": 14,
+      "title": "利用 XML 結構建構客製化規準",
+      "job": "prompts/slide_14.json",
+      "out": "origin_image/slide_14.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "c9269ed3-7372-474a-b0c2-8eac81c8c7da",
+        "agent_nickname": "Slide14",
+        "prompt": "prompts/slide_14.json",
+        "prompt_sha256": "10b0a93d6c4a25e00f089ed6ef40fde41a2a20602c89184204602febf3862020",
+        "dispatched_at": "2026-06-25T14:26:06Z"
+      },
+      "result": {
+        "agent_id": "c9269ed3-7372-474a-b0c2-8eac81c8c7da",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_14_candidate.png",
+        "selected_source_sha256": "604db8538d381677994a5583ef337de61ad9924378800e1f910bc1fcd6af6a92",
+        "final_image": "origin_image/slide_14.png",
+        "final_image_sha256": "604db8538d381677994a5583ef337de61ad9924378800e1f910bc1fcd6af6a92",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 14 candidate image was successfully generated using the codex-oauth backend, matching the Sage Green aesthetic and containing clear XML structure illustration and key points.",
+        "recorded_at": "2026-06-25T14:27:16Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_15",
+      "number": 15,
+      "title": "四大表現層級行為描述語設計",
+      "job": "prompts/slide_15.json",
+      "out": "origin_image/slide_15.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "2b81c5fe-2476-43a5-8d9f-ccc3062a3650",
+        "agent_nickname": "Slide15",
+        "prompt": "prompts/slide_15.json",
+        "prompt_sha256": "323ee9ff0a1525ca59c37608090eb7e0c6becdfc28b8c46bff8772b9c69ee0cc",
+        "dispatched_at": "2026-06-25T14:26:18Z"
+      },
+      "result": {
+        "agent_id": "2b81c5fe-2476-43a5-8d9f-ccc3062a3650",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_15_candidate.png",
+        "selected_source_sha256": "6ab4c838776497d652c6bfdf8522ef77dbeaa05545bb19fd3c9474d3d302f421",
+        "final_image": "origin_image/slide_15.png",
+        "final_image_sha256": "6ab4c838776497d652c6bfdf8522ef77dbeaa05545bb19fd3c9474d3d302f421",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 15 was successfully generated using a 4-column layout matching the sage green style reference with readable Chinese text and no overlapping content.",
+        "recorded_at": "2026-06-25T14:28:10Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_16",
+      "number": 16,
+      "title": "將規準「參數化」嵌入批閱提示詞",
+      "job": "prompts/slide_16.json",
+      "out": "origin_image/slide_16.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "ce95e342-dfea-4ae1-b4ac-ab7514b1ddba",
+        "agent_nickname": "Slide16",
+        "prompt": "prompts/slide_16.json",
+        "prompt_sha256": "d5f205cae693c3a5f1dfa2fabb595a91f3458df5e5ff7fdb3997a25dc6a51a79",
+        "dispatched_at": "2026-06-25T14:27:06Z"
+      },
+      "result": {
+        "agent_id": "ce95e342-dfea-4ae1-b4ac-ab7514b1ddba",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_16_candidate.png",
+        "selected_source_sha256": "979921fba93317a190432c31b32cf8bd24b0050ed8c37ac254d28775061b44fa",
+        "final_image": "origin_image/slide_16.png",
+        "final_image_sha256": "979921fba93317a190432c31b32cf8bd24b0050ed8c37ac254d28775061b44fa",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "The slide shows a clear comparison of general vs. parameterized prompts in cards, with correct color scheme, readable Chinese text, and no layout overlap.",
+        "recorded_at": "2026-06-25T14:28:23Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_17",
+      "number": 17,
+      "title": "教師試批流程與基準印象 (Baseline Impression)",
+      "job": "prompts/slide_17.json",
+      "out": "origin_image/slide_17.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "0a25b29e-e9d8-461c-a320-63a8ca0fd0ca",
+        "agent_nickname": "Slide17",
+        "prompt": "prompts/slide_17.json",
+        "prompt_sha256": "697797d6de54605b60eae79b3a17b6408bc0f042bf1ccec62fc7f1a10b37e57d",
+        "dispatched_at": "2026-06-25T14:27:16Z"
+      },
+      "result": {
+        "agent_id": "0a25b29e-e9d8-461c-a320-63a8ca0fd0ca",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_17_candidate.png",
+        "selected_source_sha256": "57c7b7b782eca9867b2419a0d01882d55381af42cf669c685c14be4268431992",
+        "final_image": "origin_image/slide_17.png",
+        "final_image_sha256": "57c7b7b782eca9867b2419a0d01882d55381af42cf669c685c14be4268431992",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 17 has been generated successfully using the codex-oauth backend, displaying a clean 3-step horizontal workflow with clear Traditional Chinese text.",
+        "recorded_at": "2026-06-25T14:28:23Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_18",
+      "number": 18,
+      "title": "單次對話的侷限與 AI Agent 架構",
+      "job": "prompts/slide_18.json",
+      "out": "origin_image/slide_18.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "0db49ddc-ab11-48f4-85a3-f43f4ec7baf5",
+        "agent_nickname": "Slide18",
+        "prompt": "prompts/slide_18.json",
+        "prompt_sha256": "0b9301340b1481296adc8f41e7a702997807fa880e4538c05543d40c6f650417",
+        "dispatched_at": "2026-06-25T14:27:16Z"
+      },
+      "result": {
+        "agent_id": "0db49ddc-ab11-48f4-85a3-f43f4ec7baf5",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_18_candidate.png",
+        "selected_source_sha256": "c49c8ebeef9c9748b2c9cf9b33613ec1a8504bab459cd240fb4630d6cbf2eba1",
+        "final_image": "origin_image/slide_18.png",
+        "final_image_sha256": "c49c8ebeef9c9748b2c9cf9b33613ec1a8504bab459cd240fb4630d6cbf2eba1",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "The slide image successfully generated with a clean 'problem vs solution' layout comparison.",
+        "recorded_at": "2026-06-25T14:28:23Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_19",
+      "number": 19,
+      "title": "Claude Projects 專屬工作區建置",
+      "job": "prompts/slide_19.json",
+      "out": "origin_image/slide_19.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "f081fb11-39b4-4755-8db9-70d29a7820a5",
+        "agent_nickname": "Slide19",
+        "prompt": "prompts/slide_19.json",
+        "prompt_sha256": "d1fe72fe036e142b8944dd725f38e0afa168b71dad925d68c6fb52fd3a9c04d1",
+        "dispatched_at": "2026-06-25T14:27:32Z"
+      },
+      "result": {
+        "agent_id": "f081fb11-39b4-4755-8db9-70d29a7820a5",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_19_candidate.png",
+        "selected_source_sha256": "b8cf01a97b736fd4cb556b1ebc19d3f51d3d206837521330e4300d23d50a9f62",
+        "final_image": "origin_image/slide_19.png",
+        "final_image_sha256": "b8cf01a97b736fd4cb556b1ebc19d3f51d3d206837521330e4300d23d50a9f62",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "The slide image was successfully generated using a central node architecture diagram layout with a clean sage green theme matching slide 8, and all Chinese text is rendered correctly without overlaps.",
+        "recorded_at": "2026-06-25T14:29:12Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_20",
+      "number": 20,
+      "title": "OpenAI Custom GPTs 限制與最佳實踐",
+      "job": "prompts/slide_20.json",
+      "out": "origin_image/slide_20.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "385e6b40-0553-42e3-bf08-d32c76205a57",
+        "agent_nickname": "Slide20",
+        "prompt": "prompts/slide_20.json",
+        "prompt_sha256": "7161da2173d35a09fd69a8b1255ed7b708c6e6f27801eac2cf7f673045213e5a",
+        "dispatched_at": "2026-06-25T14:27:32Z"
+      },
+      "result": {
+        "agent_id": "385e6b40-0553-42e3-bf08-d32c76205a57",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_20_candidate.png",
+        "selected_source_sha256": "db97a012ecd2ca9ef833a61c5a86228bfa8c76647425b437fc276fd6c7c79c91",
+        "final_image": "origin_image/slide_20.png",
+        "final_image_sha256": "db97a012ecd2ca9ef833a61c5a86228bfa8c76647425b437fc276fd6c7c79c91",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "The slide image was successfully generated using the OpenAI Custom GPTs prompt, matches the visual style of slide 08, and all Chinese text is clear and readable with no formatting issues.",
+        "recorded_at": "2026-06-25T14:29:14Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_21",
+      "number": 21,
+      "title": "知識庫圖片盲區與 Gemini Gems 整合",
+      "job": "prompts/slide_21.json",
+      "out": "origin_image/slide_21.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "0b24a1c2-ff2e-4dac-ab3d-431db44161b1",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_21.json",
+        "prompt_sha256": "d6cf51d23a55f678776fb033de7500859903d78fa4920ca5141804f9aef782fa",
+        "dispatched_at": "2026-06-25T14:29:29Z"
+      },
+      "result": {
+        "agent_id": "0b24a1c2-ff2e-4dac-ab3d-431db44161b1",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_21_candidate.png",
+        "selected_source_sha256": "93e136d06071d4ae2178de3fb339661e82238fb1736fe792d1b718238b8e83d3",
+        "final_image": "origin_image/slide_21.png",
+        "final_image_sha256": "93e136d06071d4ae2178de3fb339661e82238fb1736fe792d1b718238b8e83d3",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 21 has been successfully generated with a clear warning on the left and the Gemini Gems mobile flow illustration on the right, maintaining style consistency.",
+        "recorded_at": "2026-06-25T14:29:48Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_22",
+      "number": 22,
+      "title": "四階段系統提示詞架構 (RTCO)",
+      "job": "prompts/slide_22.json",
+      "out": "origin_image/slide_22.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "parent",
+        "agent_nickname": "parent",
+        "prompt": "prompts/slide_22.json",
+        "prompt_sha256": "2ae9bdb4e26f6777d9cce2a8dd5cd5613b231b692145e81538eb14658a1cdfaa",
+        "dispatched_at": "2026-06-25T14:23:31Z"
+      },
+      "result": {
+        "agent_id": "parent",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_22.png",
+        "selected_source_sha256": "4c8d548e425c87aa75a91575cabec728a10651ac13ab6f45e4482ae1b96eced5",
+        "final_image": "origin_image/slide_22.png",
+        "final_image_sha256": "4c8d548e425c87aa75a91575cabec728a10651ac13ab6f45e4482ae1b96eced5",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Static infographic copied.",
+        "recorded_at": "2026-06-25T14:23:31Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_23",
+      "number": 23,
+      "title": "系統提示詞工程的四階段強制性架構 (RTCO)",
+      "job": "prompts/slide_23.json",
+      "out": "origin_image/slide_23.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "3f004d4f-0c57-4f13-b2d6-fca8a85c2557",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_23.json",
+        "prompt_sha256": "c234d3662b84dbeb79512864256df19b2b10c6c00e120ecad4524ab83f7bef7b",
+        "dispatched_at": "2026-06-25T14:29:31Z"
+      },
+      "result": {
+        "agent_id": "3f004d4f-0c57-4f13-b2d6-fca8a85c2557",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_23_candidate.png",
+        "selected_source_sha256": "5da6879f83bfcdd8456145225aab666392e043063a00b1d792ecda34f69fa9d8",
+        "final_image": "origin_image/slide_23.png",
+        "final_image_sha256": "5da6879f83bfcdd8456145225aab666392e043063a00b1d792ecda34f69fa9d8",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 23 has been successfully generated using the sage green style with a four-quadrant layout for RTCO, and all Chinese text is clear and readable.",
+        "recorded_at": "2026-06-25T14:30:13Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_24",
+      "number": 24,
+      "title": "後設提示詞（Meta-Prompting）五步驟自我反思",
+      "job": "prompts/slide_24.json",
+      "out": "origin_image/slide_24.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "0754e248-0ec6-4b86-8455-1f8aefd88e6b",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_24.json",
+        "prompt_sha256": "05ab1e2963adb701d7c0ec53a792978efa31efb94e720637b9c46053901948a8",
+        "dispatched_at": "2026-06-25T14:29:32Z"
+      },
+      "result": {
+        "agent_id": "0754e248-0ec6-4b86-8455-1f8aefd88e6b",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_24_candidate.png",
+        "selected_source_sha256": "77cf9150da8af43a4372f778ab50fb68f72f8b4c0e211aaf3d41e02d1b0d1dde",
+        "final_image": "origin_image/slide_24.png",
+        "final_image_sha256": "77cf9150da8af43a4372f778ab50fb68f72f8b4c0e211aaf3d41e02d1b0d1dde",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 24 candidate image successfully generated with a clean 5-step process layout and proper Chinese typography matching Style A.",
+        "recorded_at": "2026-06-25T14:29:51Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_25",
+      "number": 25,
+      "title": "代理工作流（Agent Workflow）自動化架構",
+      "job": "prompts/slide_25.json",
+      "out": "origin_image/slide_25.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "69c4b7e3-7dcc-4fe1-955f-724bb17d3ed8",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_25.json",
+        "prompt_sha256": "4ab9c709a1190b3a5c229e2f18bf6bba4d53a9bcd2e1ca9e994ee6f250034ef7",
+        "dispatched_at": "2026-06-25T14:29:35Z"
+      },
+      "result": {
+        "agent_id": "69c4b7e3-7dcc-4fe1-955f-724bb17d3ed8",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_25_candidate.png",
+        "selected_source_sha256": "1eda6d48a01099e3705dca5eaa80031dc00bb86b987f4618da0dcc684806b8f1",
+        "final_image": "origin_image/slide_25.png",
+        "final_image_sha256": "1eda6d48a01099e3705dca5eaa80031dc00bb86b987f4618da0dcc684806b8f1",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Successfully generated a high-quality three-node workflow architecture diagram matching the sage green slide style.",
+        "recorded_at": "2026-06-25T14:29:49Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_26",
+      "number": 26,
+      "title": "外部工具事實查核 (Fact-checking)",
+      "job": "prompts/slide_26.json",
+      "out": "origin_image/slide_26.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "4c628114-a7df-4ccc-b1d4-6a71f355eca1",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_26.json",
+        "prompt_sha256": "a52a42160efd21b46a77dcc6e5dfd522268fedff606d6c59b20a3f0f50e044c9",
+        "dispatched_at": "2026-06-25T14:30:02Z"
+      },
+      "result": {
+        "agent_id": "4c628114-a7df-4ccc-b1d4-6a71f355eca1",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_26_candidate.png",
+        "selected_source_sha256": "c6878dd960ae82b6741f8f9446f8f8a4b1fafc012e88cbfef4c4c530221713b7",
+        "final_image": "origin_image/slide_26.png",
+        "final_image_sha256": "c6878dd960ae82b6741f8f9446f8f8a4b1fafc012e88cbfef4c4c530221713b7",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "The slide was successfully generated with clean layout matching Style A and clear process diagram illustrating fact-checking logic.",
+        "recorded_at": "2026-06-25T14:31:43Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_27",
+      "number": 27,
+      "title": "AI 幻覺在科學評量中的危機",
+      "job": "prompts/slide_27.json",
+      "out": "origin_image/slide_27.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "46645329-947e-43d0-a73e-bd13fbeef7f6",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_27.json",
+        "prompt_sha256": "1628888e40886fb0b8d70a308dca18425d92e9112d84c8bba42daa34cc3bd29c",
+        "dispatched_at": "2026-06-25T14:30:04Z"
+      },
+      "result": {
+        "agent_id": "46645329-947e-43d0-a73e-bd13fbeef7f6",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_27_candidate.png",
+        "selected_source_sha256": "8fe949d400a087550559c93d4e458b67689892ef6fd99b34e9db4265e549e3f1",
+        "final_image": "origin_image/slide_27.png",
+        "final_image_sha256": "8fe949d400a087550559c93d4e458b67689892ef6fd99b34e9db4265e549e3f1",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "The slide candidate for Slide 27 has been successfully generated, matching the approved sage-green visual identity and verifying that the Chinese text is fully readable and clear.",
+        "recorded_at": "2026-06-25T14:31:15Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_28",
+      "number": 28,
+      "title": "檢索增強生成（RAG）的失效與偏誤",
+      "job": "prompts/slide_28.json",
+      "out": "origin_image/slide_28.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "3f7ce6f2-c5a6-4fce-96db-8c3fa7e406d1",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_28.json",
+        "prompt_sha256": "aafd63742d0badad1599fbde210601932a54d9a7b1ae97216a471f594ff2b06a",
+        "dispatched_at": "2026-06-25T14:30:07Z"
+      },
+      "result": {
+        "agent_id": "3f7ce6f2-c5a6-4fce-96db-8c3fa7e406d1",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_28_candidate.png",
+        "selected_source_sha256": "ba2f74dba84dae10713266a7f303ec266d892a90d9f6e24975f969ef2ecfc204",
+        "final_image": "origin_image/slide_28.png",
+        "final_image_sha256": "ba2f74dba84dae10713266a7f303ec266d892a90d9f6e24975f969ef2ecfc204",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 28 has been successfully generated using the selected backend, featuring the correct theme, clear Chinese typography, and the concept diagram for RAG retrieval flaws.",
+        "recorded_at": "2026-06-25T14:31:39Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_29",
+      "number": 29,
+      "title": "抗幻覺護欄設計與參數調校",
+      "job": "prompts/slide_29.json",
+      "out": "origin_image/slide_29.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "dbc2044d-e074-4120-b418-32ae5de58a75",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_29.json",
+        "prompt_sha256": "031505b4c3341e1b1def522eee8d0903944fc885f809a977f52d750f20398778",
+        "dispatched_at": "2026-06-25T14:30:08Z"
+      },
+      "result": {
+        "agent_id": "dbc2044d-e074-4120-b418-32ae5de58a75",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_29_candidate.png",
+        "selected_source_sha256": "d868ddcd01f41922d49c0bd8b241b2498f157fc758c4fb39a4f038b04779ca41",
+        "final_image": "origin_image/slide_29.png",
+        "final_image_sha256": "d868ddcd01f41922d49c0bd8b241b2498f157fc758c4fb39a4f038b04779ca41",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 29 was successfully generated with readable Chinese text, matching the Sage Green visual style of the approved sample slide.",
+        "recorded_at": "2026-06-25T14:31:08Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_30",
+      "number": 30,
+      "title": "工業自動化陷阱與教育倫理",
+      "job": "prompts/slide_30.json",
+      "out": "origin_image/slide_30.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "93157284-64ea-41e4-91fd-d4f7525a97c5",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_30.json",
+        "prompt_sha256": "bd3f23e8aeb1755342a49fd23d7c962a28815b55fc18cea5fac4d85f1201d1bc",
+        "dispatched_at": "2026-06-25T14:30:10Z"
+      },
+      "result": {
+        "agent_id": "93157284-64ea-41e4-91fd-d4f7525a97c5",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_30_candidate.png",
+        "selected_source_sha256": "05a04e424ab728f9cf352abafaa5342c37faed6bea9cae195ddfc2349ac36be0",
+        "final_image": "origin_image/slide_30.png",
+        "final_image_sha256": "05a04e424ab728f9cf352abafaa5342c37faed6bea9cae195ddfc2349ac36be0",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 30 generated successfully, featuring a balanced scale comparing human judgment and machine automation in clean Sage Green style with no garbled text or layout issues.",
+        "recorded_at": "2026-06-25T14:31:36Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_31",
+      "number": 31,
+      "title": "教學判斷的絕對基礎性",
+      "job": "prompts/slide_31.json",
+      "out": "origin_image/slide_31.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "23813253-83b2-4c9c-9210-2204948a4462",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_31.json",
+        "prompt_sha256": "7b3d9d657bc04533ef9cea4fbec76805093495fbdfa9dcf572c235f704c2a55a",
+        "dispatched_at": "2026-06-25T14:30:18Z"
+      },
+      "result": {
+        "agent_id": "23813253-83b2-4c9c-9210-2204948a4462",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_31_candidate.png",
+        "selected_source_sha256": "19d0535f83d086b95fc585d32bcdcf5897af483fa56056f4b7d776a04eb75757",
+        "final_image": "origin_image/slide_31.png",
+        "final_image_sha256": "19d0535f83d086b95fc585d32bcdcf5897af483fa56056f4b7d776a04eb75757",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "The slide image was successfully generated using the sage green Style A palette and layout featuring three structured key points and a professional certified teacher shield visual.",
+        "recorded_at": "2026-06-25T14:31:46Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_32",
+      "number": 32,
+      "title": "HITL 四階段遞迴工作流",
+      "job": "prompts/slide_32.json",
+      "out": "origin_image/slide_32.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "parent",
+        "agent_nickname": "parent",
+        "prompt": "prompts/slide_32.json",
+        "prompt_sha256": "cf19473dd658c2421d963ab95b7f0d3267898921c0b4afb34062885b19fe7dac",
+        "dispatched_at": "2026-06-25T14:23:32Z"
+      },
+      "result": {
+        "agent_id": "parent",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_32.png",
+        "selected_source_sha256": "b5fca1df1262f73e41ef271e0e26ba65197add90d6a378b8c4ea1fbb72f9cc43",
+        "final_image": "origin_image/slide_32.png",
+        "final_image_sha256": "b5fca1df1262f73e41ef271e0e26ba65197add90d6a378b8c4ea1fbb72f9cc43",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Static infographic copied.",
+        "recorded_at": "2026-06-25T14:23:32Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_33",
+      "number": 33,
+      "title": "HITL 四階段遞迴工作流實踐",
+      "job": "prompts/slide_33.json",
+      "out": "origin_image/slide_33.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "fc23c290-9df8-4d8f-991f-8c674d92503c",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_33.json",
+        "prompt_sha256": "6ce9f82544b693d2d47dc58d3adf56a6cb8ecd783668959a333dae553b3a5f74",
+        "dispatched_at": "2026-06-25T14:31:28Z"
+      },
+      "result": {
+        "agent_id": "fc23c290-9df8-4d8f-991f-8c674d92503c",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_33_candidate.png",
+        "selected_source_sha256": "2b15cd40b2e258a0be0400256e7f19852460c18e15dd9b87c8d06f586591da00",
+        "final_image": "origin_image/slide_33.png",
+        "final_image_sha256": "2b15cd40b2e258a0be0400256e7f19852460c18e15dd9b87c8d06f586591da00",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 33 has been successfully generated using the codex-oauth backend, presenting a clean 4-card horizontal cyclic arrow layout with perfect Chinese rendering in Style A.",
+        "recorded_at": "2026-06-25T14:32:52Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_34",
+      "number": 34,
+      "title": "典範移轉：人機協同的科學教育未來",
+      "job": "prompts/slide_34.json",
+      "out": "origin_image/slide_34.png",
+      "input_images": [],
+      "style_reference_images": [
+        {
+          "path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/origin_image/slide_08.png",
+          "role": "approved sample slide style reference",
+          "fidelity": "match style only; do not copy layout or content"
+        }
+      ],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "341e6d62-bf82-4748-9490-80ac7df9e742",
+        "agent_nickname": null,
+        "prompt": "prompts/slide_34.json",
+        "prompt_sha256": "fe457c90932d9347b570ad04ba363bdc88326d7e21d95543da12f0c001b4efb1",
+        "dispatched_at": "2026-06-25T14:31:33Z"
+      },
+      "result": {
+        "agent_id": "341e6d62-bf82-4748-9490-80ac7df9e742",
+        "backend_used": "scripts/image_gen.py --backend auto",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/0AI應用/0-AI輔助批改評分/2實驗報告批改/AI_Grading_PPT/drafts/slide_34_candidate.png",
+        "selected_source_sha256": "0a255b13e0750430bbcda38f0faf6717510b77290d2326ecc7e6ad94732faaae",
+        "final_image": "origin_image/slide_34.png",
+        "final_image_sha256": "0a255b13e0750430bbcda38f0faf6717510b77290d2326ecc7e6ad94732faaae",
+        "expected_backend": "scripts/image_gen.py --backend auto",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto",
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Slide 34 was successfully generated, featuring the core conclusion points and an inspirational future-vision layout that perfectly matches the sage green visual identity.",
+        "recorded_at": "2026-06-25T14:32:44Z"
+      },
+      "blocker": null
+    }
+  ],
+  "updated_at": "2026-06-25T14:32:52Z"
+}
