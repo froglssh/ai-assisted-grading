@@ -183,7 +183,7 @@
       color: var(--primary);
       font-weight: 700;
       font-size: 0.95rem;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
       margin-top: 16px;
@@ -436,6 +436,81 @@
       border-color: var(--ink-light);
     }
 
+    /* 卡片內多資源列表樣式 */
+    .fc-resources {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-top: 1px dashed var(--border);
+      padding-top: 12px;
+    }
+
+    .fc-res-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      background: var(--bg);
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.02);
+      transition: var(--transition);
+    }
+
+    .fc-res-item:hover {
+      background: var(--primary-light);
+      border-color: rgba(45, 106, 79, 0.1);
+    }
+
+    .fc-res-info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .fc-res-info i {
+      font-size: 14px;
+      color: var(--ink-light);
+    }
+
+    .fc-res-links {
+      display: flex;
+      gap: 8px;
+    }
+
+    .fc-res-link {
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .fc-res-link-view {
+      background: rgba(45, 106, 79, 0.1);
+      color: var(--primary);
+    }
+
+    .fc-res-link-view:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .fc-res-link-dl {
+      background: white;
+      color: var(--ink-light);
+      border: 1px solid var(--border);
+    }
+
+    .fc-res-link-dl:hover {
+      background: var(--ink-light);
+      color: white;
+      border-color: var(--ink-light);
+    }
+
     /* ── FOOTER ── */
     footer {
       background: #1b4332;
@@ -481,7 +556,6 @@
     <div class="hero-container">
       <div class="hero-text">
         <div class="title-wrapper">
-          <!-- 生物科圖案標誌：融合樹葉與DNA雙螺旋結構的精緻SVG -->
           <svg class="bio-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
             <path d="M425.9 146.5c-15.5-23.7-44.4-48-91.9-63.5-7-2.3-14.7 1.5-17 8.5-2.3 7 1.5 14.7 8.5 17 38.6 12.6 60.6 30.6 71.8 47.7-18.6 6.8-43.1 11-71.1 12.2-4.5-5.9-9.6-11.8-15.4-17.7-27.1-27.5-62-43.7-93.5-43.7-47.5 0-97.1 36.8-132.8 98.7C48.6 262 32 324.9 32 371.4c0 36.6 20.3 64.1 60.5 81.8 6.4 2.8 13.9-.1 16.7-6.5s-.1-13.9-6.5-16.7c-27.9-12.3-40.7-30-40.7-58.6 0-38.3 14.8-95.2 47.2-151.3 32.5-56.3 76.2-88.7 114.8-88.7 20 0 45.4 11.8 66 32.7 8.7 8.8 16.3 19.3 22.8 30.9-20.2 4.1-41 10.3-61.4 18.7C214.3 280.9 184 316.5 168.3 355.6c-7.9 19.7-11.3 38.8-9.8 55.4.9 9.8 4.2 18 10 24.3 7.6 8.3 19.9 12.7 34.6 12.7 31.7 0 71-20.8 104.9-55.6 13.7-14.1 26.2-30.2 36.7-47.8 28.5-3.3 54.4-11.3 75.3-23.7 24.7-14.6 39.5-33.8 43.1-55.7 3.9-23.4-3.3-48.4-17.2-72.4zM277.5 365.1c-25.7 26.4-55 41.7-74.4 42.9.2-8.3 2.1-20.4 7.6-34 11.5-28.6 35-56.1 66.8-71.1-1.3 22.7.2 43.8 7.8 62.9-2.6 6.8-5.2 13.3-7.8 19.3zm55.3-76.3c-6.8 13-15.3 25-25.1 35.8-6.1-16.9-7-34.9-5-53.1 10 3.8 20.1 9.2 30.1 17.3zm47.2-32.9c-15.7 8.4-34.4 13.8-54.6 16.1-2-9-5.1-17.7-9.4-25.8 22.1-2.2 43.5-7.4 64-15.5.2 1.7.3 3.4 0 5.2z"/>
           </svg>
@@ -577,84 +651,308 @@
     <!-- ── 分類一：實驗報告批改 ── -->
     <div id="tab-2" class="tab-pane active" role="tabpanel">
       <div class="file-grid">
-        <!-- 檔案卡片 -->
+        <!-- 1. AI學術論文 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
               <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">AI輔助自然科學探究與實作實驗報告評閱論文</h4>
+                <h4 class="fc-name">AI輔助高中自然科學探究實驗報告評閱論文</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">PDF</span>
-                  <span class="badge badge-scope">學術深度研究</span>
+                  <span class="badge badge-scope">學術研究</span>
                 </div>
               </div>
             </div>
             <p class="fc-desc">高中課程實驗報告評閱與學習評量之深度分析與系統建置學術研究報告。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> PDF 論文檔</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1LvGLg2Dg80mnJBMlt3GPJudCN06qjXyK/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1LvGLg2Dg80mnJBMlt3GPJudCN06qjXyK" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-docx" aria-hidden="true"></i> Word 論文檔</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1z2nY5BloGXLk0qFIRAQ2KULkNK5Zyhgf/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1z2nY5BloGXLk0qFIRAQ2KULkNK5Zyhgf" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- 2. Agent操作指南 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
               <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">AI代理程式（AI Agent）架構與專屬機器人設定操作指南</h4>
+                <h4 class="fc-name">AI Agent 架構與專屬機器人設定操作指南</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">PDF / DOCX</span>
                   <span class="badge badge-scope">操作指南</span>
                 </div>
               </div>
             </div>
             <p class="fc-desc">說明如何建立專屬的 AI Agent 批改助理，並內含指令設計說明。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> PDF 指南檔</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1EfLL7xfxXrXqg0tYA1elcsZmPA4A3d-C/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1EfLL7xfxXrXqg0tYA1elcsZmPA4A3d-C" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-docx" aria-hidden="true"></i> Word 指南檔</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1btBKbovvRsnju3Pnv6lUVlIqUpu4BKg8/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1btBKbovvRsnju3Pnv6lUVlIqUpu4BKg8" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- 3. 教學簡報 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
               <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">顯微測量技術：實驗講義、記錄與評分解答標準</h4>
+                <h4 class="fc-name">AI 輔助高中實驗報告批改教學簡報</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">PDF組合包</span>
+                  <span class="badge badge-scope">教學簡報</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">林獻升老師研習授課與報告使用之 AI 輔助評量與批改研究簡報檔。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> AI 輔改研究簡報 (16Ev0H)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/16Ev0Hx7EKHUfNGJHRbVSTXSa9TAtXZDP/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=16Ev0Hx7EKHUfNGJHRbVSTXSa9TAtXZDP" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> AI 輔改 LM 簡報 (10VYaX)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/10VYaXo1jO5VFF-w0rnb9-PMrUdyKdUIW/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=10VYaXo1jO5VFF-w0rnb9-PMrUdyKdUIW" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 顯微測量教材 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">顯微測量技術：課堂教材</h4>
+                <div class="fc-meta">
                   <span class="badge badge-scope">課堂教材</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">內含顯微測量技術實驗記錄 PDF、實驗講義 PDF 以及標準答案與評分標準。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <p class="fc-desc">學生填寫數據與繪圖的「實驗記錄表」，以及目鏡與物鏡測微器校正方法的「實驗講義」。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 顯微測量技術實驗記錄表</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1Lb_jX3bbxWI8zdZnCYvDUMXs0m-xkfrv/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1Lb_jX3bbxWI8zdZnCYvDUMXs0m-xkfrv" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 顯微測量技術實驗講義</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1uT-HM5lvwMkf0vj2KGMe6CisU9bf6UYs/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1uT-HM5lvwMkf0vj2KGMe6CisU9bf6UYs" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- 5. 顯微測量評分與步驟 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
-              <div class="fc-icon ft-media"><i class="ti ti-music" aria-hidden="true"></i></div>
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">語音與影音導覽介紹檔案</h4>
+                <h4 class="fc-name">顯微測量技術：解答、步驟與評分標準</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">MP4 / M4A</span>
+                  <span class="badge badge-scope">評分與標準</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">教師手冊：顯微測量技術實驗記錄標準解答、評分標準，以及評量規準的六步驟工作流。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 3 實驗解答與評分標準 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1N3wC0kvjoKDIgumvfrO5eeKVGp1ywU-R/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1N3wC0kvjoKDIgumvfrO5eeKVGp1ywU-R" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-docx" aria-hidden="true"></i> 3 實驗解答與評分標準 (Word)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1jl3YMJYDmAhHNTmUJT-NJoq5fJJFm8AL/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1jl3YMJYDmAhHNTmUJT-NJoq5fJJFm8AL" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 2 建立評量標準步驟 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1kaRARrhb7BwvvFFTT5sX5FvKNnMeE55-/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1kaRARrhb7BwvvFFTT5sX5FvKNnMeE55-" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-docx" aria-hidden="true"></i> 2 建立評量標準步驟 (Word)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1fn7jbaYkEpQY5nHY5_lTniyWFd-bMnMO/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1fn7jbaYkEpQY5nHY5_lTniyWFd-bMnMO" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. 顯微測量提示詞 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">顯微測量 AI 評改助理設定提示詞</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-scope">提示詞工程</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">用於大語言模型批改顯微測量報告之設定提示詞，包含 Gemini, Claude 以及 ChatGPT 三個版本。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> Gemini Gem 提示詞 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1xosF0povkjJQGubGcNEBkjtXY7XT2crp/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1xosF0povkjJQGubGcNEBkjtXY7XT2crp" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-docx" aria-hidden="true"></i> Gemini Gem 提示詞 (Word)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1RMCB99KIBHQVsVdEFeKvatUYPlmJV0q1/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1RMCB99KIBHQVsVdEFeKvatUYPlmJV0q1" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> Claude Project 提示詞 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1XpcZjtUpotvtRhxkPPDGMLmHyV_n8vhx/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1XpcZjtUpotvtRhxkPPDGMLmHyV_n8vhx" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> ChatGPT GPTs 提示詞 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1SEOLT6hvUIjrYe0aSGgQH9Zc8bnipLCU/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1SEOLT6hvUIjrYe0aSGgQH9Zc8bnipLCU" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-docx" aria-hidden="true"></i> ChatGPT GPTs 提示詞 (Word)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/19QXvQwmVXFVClqje5DnIXnRBlo66nISF/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=19QXvQwmVXFVClqje5DnIXnRBlo66nISF" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. 學生手寫作業原卷 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">顯微測量技術學生手寫作業原卷 (1-4)</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-scope">手寫卷樣本</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">真實學生手寫之實驗記錄表掃描檔案，提供 AI 批改與辨識系統測試與練習對照。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生作業記錄卷 1 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/10fwhe5y-_U-3qh-3WNubNxnb70bZdQKm/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=10fwhe5y-_U-3qh-3WNubNxnb70bZdQKm" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生作業記錄卷 2 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1Ow_Dt1QuL4vyCFsEmlHmBSa_rBEuPEJJ/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1Ow_Dt1QuL4vyCFsEmlHmBSa_rBEuPEJJ" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生作業記錄卷 3 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1Y2NXJfZ-YHRbPVRvWP_LqkdITtn7HVd9/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1Y2NXJfZ-YHRbPVRvWP_LqkdITtn7HVd9" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生作業記錄卷 4 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1rHdZTUOLnoAnoxxiGtHNrSTLHZRgDCd-/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1rHdZTUOLnoAnoxxiGtHNrSTLHZRgDCd-" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. 影音多媒體 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-media"><i class="ti ti-video" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">多媒體影音與導覽資源</h4>
+                <div class="fc-meta">
                   <span class="badge badge-scope">多媒體簡介</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">內含新課綱批改挑戰影音（MP4）與 AI 批改高中實驗報告指南語音檔（M4A）。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <p class="fc-desc">高中新課綱評量挑戰、大語言模型輔助批改探究與實作實驗報告之簡介與語音導覽檔。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-brand-youtube" aria-hidden="true"></i> 影片：新課綱的批改挑戰 (MP4)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1oH42AetC8EvbdXP3obCCKEVvhsMKOwyN/view?usp=drivesdk" target="_blank">播放</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1oH42AetC8EvbdXP3obCCKEVvhsMKOwyN" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-microphone" aria-hidden="true"></i> 語音：AI 批改高中實驗報告指南 (M4A)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/10waXIxOmfj8HbMamXnb0BodE8O2A8Iu4/view?usp=drivesdk" target="_blank">播放</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=10waXIxOmfj8HbMamXnb0BodE8O2A8Iu4" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -663,63 +961,156 @@
     <!-- ── 分類二：考卷非選批改 ── -->
     <div id="tab-3" class="tab-pane" role="tabpanel">
       <div class="file-grid">
+        <!-- 1. 114 E2 模擬考 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
               <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">114學科能力測驗模擬考非選擇題答案批改評審</h4>
+                <h4 class="fc-name">114學年度模擬考 E2 自然科資源</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">PDF</span>
-                  <span class="badge badge-scope">批改示範</span>
-                </div>
-              </div>
-            </div>
-            <p class="fc-desc">提供模擬考非選擇題答案批改示範，包含 ChatGPT 與 Gemini 批改效果對照。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
-          </div>
-        </div>
-
-        <div class="file-card">
-          <div>
-            <div class="fc-header">
-              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
-              <div class="fc-title-area">
-                <h4 class="fc-name">114年E2 / E3 模擬考自然科題目與解答</h4>
-                <div class="fc-meta">
-                  <span class="badge badge-type">PDF</span>
                   <span class="badge badge-scope">模擬考題</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">含114年E2與E3學測模擬考試卷、非選評分原則、標準解答與詳細說明。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <p class="fc-desc">114學年度模擬考 E2 自然科非選擇題之題目卷與官方解答標準說明。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 114模擬考 E2 自然科—題目卷</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1yWDnjAmhc7bePh_90Zbso3t8lewAJIjj/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1yWDnjAmhc7bePh_90Zbso3t8lewAJIjj" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 114模擬考 E2 自然科—解答卷</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1QyKCdE0C3HPgMV5xLG3errHyGgpOtxlu/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1QyKCdE0C3HPgMV5xLG3errHyGgpOtxlu" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- 2. 114 E3 模擬考 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
-              <div class="fc-icon ft-docx"><i class="ti ti-file-type-docx" aria-hidden="true"></i></div>
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">考題非選批改評審設定提示詞</h4>
+                <h4 class="fc-name">114學年度模擬考 E3 自然科資源</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">DOCX / PDF</span>
+                  <span class="badge badge-scope">模擬考題</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">114學年度模擬考 E3 自然科試卷題目，以及大考官方的評分原則與細目指引。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 114模擬考 E3 自然科—題目卷</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1QSzjPc-D7AXKwoD3rK5Z6_pDy1tQSSQu/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1QSzjPc-D7AXKwoD3rK5Z6_pDy1tQSSQu" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 114模擬考 E3 自然科—評分原則</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1bJC1A2J1nDld2KJh2VANKXM3587cpkS8/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1bJC1A2J1nDld2KJh2VANKXM3587cpkS8" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. AI評分示範 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">114模擬考生物 AI 評分示範成果</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-scope">示範成果</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">114年學測模擬考生物科非選擇題之 AI 評分與批改說明展示報告。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 114模擬考生物 AI 評分示範成果 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/11A-hpCzZBV-3eRehojY7VpY8tzA0WkSM/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=11A-hpCzZBV-3eRehojY7VpY8tzA0WkSM" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 批改實例對照 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">學測非選答案 AI 批改對照實例</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-scope">批改對照</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">學測模擬考非選擇題經由 ChatGPT 與 Gemini 批改與評分之實例對照。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> ChatGPT 批改對照 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/10GGEUXPA1EwR9DdwObcxtNAbd5itv7R7/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=10GGEUXPA1EwR9DdwObcxtNAbd5itv7R7" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> Gemini 批改對照 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1brzvcHx8pGna_Bbdtcz1YBKE_nUYK8YB/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1brzvcHx8pGna_Bbdtcz1YBKE_nUYK8YB" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 批改提示詞 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">學測非選題 AI 批改設定提示詞</h4>
+                <div class="fc-meta">
                   <span class="badge badge-scope">提示詞工程</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">用於非選擇題答案 AI 批改與給分原則解析的專屬系統設定提示詞文件。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <p class="fc-desc">學測自然科非選題 AI 輔助批改與評分原則解析之系統設定提示詞。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 系統設定提示詞 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1IHf_DYuGVRttaHqeKr1oXvbAZkWqmrN7/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1IHf_DYuGVRttaHqeKr1oXvbAZkWqmrN7" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-docx" aria-hidden="true"></i> 系統設定提示詞 (Word)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1QdsyS-OEgv-6BWcNLZ_3zY_Sd_TkzVFC/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1QdsyS-OEgv-6BWcNLZ_3zY_Sd_TkzVFC" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -728,63 +1119,124 @@
     <!-- ── 分類三：小論文競賽評審 ── -->
     <div id="tab-4" class="tab-pane" role="tabpanel">
       <div class="file-grid">
+        <!-- 1. 生物類評分標準 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
               <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">小論文競賽評審要點、注意事項與實施辦法</h4>
+                <h4 class="fc-name">高中小論文寫作比賽生物類評分規準</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">PDF組合</span>
+                  <span class="badge badge-scope">官方評分</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">全國高級中等學校小論文寫作比賽生物類群評分規準與細微扣分原則規章。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 生物類群評分標準與扣分原則 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1S3yuGDmkvfye-OKVpQfEJYvR2O_FiqLy/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1S3yuGDmkvfye-OKVpQfEJYvR2O_FiqLy" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. 專家導向 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">專家視角：小論文評分標準解析</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-scope">專家導向</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">從高中自然科教師與審查專家視角解析小論文比賽評量規準之評閱要點與核心邏輯。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 以人類科學老師觀點小論文評分 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1C8Ckh6LtSrVP8gTAhbwAq2UQQOr4ROyA/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1C8Ckh6LtSrVP8gTAhbwAq2UQQOr4ROyA" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 官方規章 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">小論文寫作比賽官方參賽規章</h4>
+                <div class="fc-meta">
                   <span class="badge badge-scope">官方規章</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">全國高級中等學校小論文寫作比賽官方規則、引用格式與投稿注意事項。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <p class="fc-desc">中等學校小論文寫作比賽官方公告之實施要點、參賽注意事項，以及引註與參考文獻格式指引。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 1 小論文寫作比賽實施要點 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1w92xN9NsffbmVlLsitOXUkd42ilSkpo0/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1w92xN9NsffbmVlLsitOXUkd42ilSkpo0" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 2 小論文寫作比賽投稿注意事項 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1NtctqQ0Gwk0rq7T_c-gE1rl7P3LkK-9W/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1NtctqQ0Gwk0rq7T_c-gE1rl7P3LkK-9W" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 3 小論文寫作比賽資料引用格式範例 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1HnAwMb5MVG22kNddoiBGTyj-on3hej2j/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1HnAwMb5MVG22kNddoiBGTyj-on3hej2j" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- 4. AI設定 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
               <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">小論文寫作生物類群評分標準與扣分原則</h4>
+                <h4 class="fc-name">小論文競賽 AI 輔導與寫作設定提示詞</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">PDF / DOCX</span>
-                  <span class="badge badge-scope">評審專家版</span>
+                  <span class="badge badge-scope">AI提示詞</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">專為生物類群小論文訂定之精細評分規準與扣分原則（專家審查適用）。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
-          </div>
-        </div>
-
-        <div class="file-card">
-          <div>
-            <div class="fc-header">
-              <div class="fc-icon ft-docx"><i class="ti ti-file-type-docx" aria-hidden="true"></i></div>
-              <div class="fc-title-area">
-                <h4 class="fc-name">小論文競賽 AI 設定與引導提示詞（v1~v7）</h4>
-                <div class="fc-meta">
-                  <span class="badge badge-type">DOCX / PDF</span>
-                  <span class="badge badge-scope">AI輔導設定</span>
+            <p class="fc-desc">輔導高中生撰寫小論文之 AI 評改與大綱優化系統提示詞設定，包含生物類特化版與通用類群版。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 小論文競賽AI設定提示詞（生物類）7 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1hBYoeryvqFXbpGZjQ78W35JCynn_JMpX/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1hBYoeryvqFXbpGZjQ78W35JCynn_JMpX" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 小論文競賽AI設定提示詞（各類群適用）5 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1wV50hTQoiqvK5VCd8nUCgtgqMLAt6hii/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1wV50hTQoiqvK5VCd8nUCgtgqMLAt6hii" target="_blank">下載</a>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">包含生物類群與各類群通用的小論文 AI 評審引導與大綱微調提示詞（多版本）。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
           </div>
         </div>
       </div>
@@ -793,26 +1245,7 @@
     <!-- ── 分類四：國寫作文批改 ── -->
     <div id="tab-5" class="tab-pane" role="tabpanel">
       <div class="file-grid">
-        <div class="file-card">
-          <div>
-            <div class="fc-header">
-              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
-              <div class="fc-title-area">
-                <h4 class="fc-name">115年學測國文寫作測驗批改與評分示範</h4>
-                <div class="fc-meta">
-                  <span class="badge badge-type">PDF / DOCX</span>
-                  <span class="badge badge-scope">作文範例</span>
-                </div>
-              </div>
-            </div>
-            <p class="fc-desc">國文寫作（國寫）非選擇題之 AI 批改分析、評語回饋與詳細得分判定示範。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
-          </div>
-        </div>
-
+        <!-- 1. 國寫評分原則 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
@@ -820,36 +1253,172 @@
               <div class="fc-title-area">
                 <h4 class="fc-name">115學測國寫非選擇題評分原則</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">PDF</span>
                   <span class="badge badge-scope">大考規準</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">學科能力測驗國文科寫作測驗之官方閱卷與給分標準原則說明。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <p class="fc-desc">大考中心官方發布之 115 學測國寫非選擇題閱卷給分原則與優秀範文解析手冊。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 大考國寫評分原則 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/18lf6Rn3yBkmxhtG_JBR0BHO4PvK0ESG0/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=18lf6Rn3yBkmxhtG_JBR0BHO4PvK0ESG0" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- 2. AI設定 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
               <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">學生手寫作文原卷（1-1 至 2-6）</h4>
+                <h4 class="fc-name">115年國文寫作測驗批改與評分 AI 設定</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">PDF組</span>
-                  <span class="badge badge-scope">手寫原始卷</span>
+                  <span class="badge badge-scope">作文評改</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">包含數十份真實學生國寫手寫考卷掃描檔，供 AI 批改與辨識系統測試使用。</p>
+            <p class="fc-desc">115學測國語文寫作能力測驗非選題 AI 批改、提示詞引導與評分系統設定指南。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 國寫批改 AI 設定提示詞 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1XJ_OPzXzECJJrKYfIiLPmDs6EdzWYULS/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1XJ_OPzXzECJJrKYfIiLPmDs6EdzWYULS" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-docx" aria-hidden="true"></i> 國寫批改 AI 設定提示詞 (Word)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1DJHzNX3GxkMfN44e4HGfCJsLXNxiUqOj/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1DJHzNX3GxkMfN44e4HGfCJsLXNxiUqOj" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+        </div>
+
+        <!-- 3. 第一大題原卷 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">第一大題手寫作文掃描原卷 (1-1 至 1-6)</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-scope">手寫卷樣本</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">第一大題真實學生手寫國寫作文卷掃描檔案（含 1-1 至 1-6），供 AI OCR 與批改測試。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 1-1 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1PVsNiTkcwb1ik0uPiy0FTrItXmwlGlQV/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1PVsNiTkcwb1ik0uPiy0FTrItXmwlGlQV" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 1-2 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1BScHl7e5mJuumdXrE3B-6MBaxQgXvnd8/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1BScHl7e5mJuumdXrE3B-6MBaxQgXvnd8" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 1-3 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1J_lsrHSR4Bpy9HIYWM4DZlTPtrcSpm1f/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1J_lsrHSR4Bpy9HIYWM4DZlTPtrcSpm1f" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 1-4 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1DPyQi_65rAuxMd1731syXhd9FDpYEmZA/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1DPyQi_65rAuxMd1731syXhd9FDpYEmZA" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 1-5 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1ofHAW7i7o6AQ4OIHMe2OYvCaHLcjVnQ8/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1ofHAW7i7o6AQ4OIHMe2OYvCaHLcjVnQ8" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 1-6 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1s9mE-uvPl-QVjEQKuvP0sux0yImUAEox/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1s9mE-uvPl-QVjEQKuvP0sux0yImUAEox" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 第二大題原卷 -->
+        <div class="file-card">
+          <div>
+            <div class="fc-header">
+              <div class="fc-icon ft-pdf"><i class="ti ti-file-type-pdf" aria-hidden="true"></i></div>
+              <div class="fc-title-area">
+                <h4 class="fc-name">第二大題手寫作文掃描原卷 (2-1 至 2-6)</h4>
+                <div class="fc-meta">
+                  <span class="badge badge-scope">手寫卷樣本</span>
+                </div>
+              </div>
+            </div>
+            <p class="fc-desc">第二大題真實學生手寫國寫作文卷掃描檔案（含 2-1 至 2-6），供 AI OCR 與批改測試。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 2-1 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/17ly5BDptG-zRARvzgJvgQjvPjWJFmRVA/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=17ly5BDptG-zRARvzgJvgQjvPjWJFmRVA" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 2-2 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1KpNrW68HHFPcGcpO34ufGidueDEyDENm/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1KpNrW68HHFPcGcpO34ufGidueDEyDENm" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 2-3 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1BjSUgUiZSIbQ5ZPgi3T1X6TBcjcfew3s/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1BjSUgUiZSIbQ5ZPgi3T1X6TBcjcfew3s" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 2-4 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1b4DlOjFMy61I2HvfNyGaZpXy6YiloD-v/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1b4DlOjFMy61I2HvfNyGaZpXy6YiloD-v" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 2-5 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1Ibm__47BulhI3pzuHfBXQJ-RO7xWxGhy/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1Ibm__47BulhI3pzuHfBXQJ-RO7xWxGhy" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> 學生手寫原卷 2-6 (PDF)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1OxM2l1mzQjs2h5qXhMMlQfrDC2k0fapX/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1OxM2l1mzQjs2h5qXhMMlQfrDC2k0fapX" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -858,43 +1427,67 @@
     <!-- ── 分類五：手寫成績 OCR ── -->
     <div id="tab-1" class="tab-pane" role="tabpanel">
       <div class="file-grid">
+        <!-- 1. OCR 辨識對照表 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
               <div class="fc-icon ft-xlsx"><i class="ti ti-file-type-xls" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">生物科手寫成績單 OCR 辨識結果表</h4>
+                <h4 class="fc-name">生物科手寫成績單 OCR 辨識對照結果</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">XLSX</span>
-                  <span class="badge badge-scope">OCR數據表</span>
+                  <span class="badge badge-scope">辨識結果</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">含 Gemini、Claude 以及 GPT 辨識之成績對照 Excel 表格。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <p class="fc-desc">經由 Gemini, Claude 與 ChatGPT 多模態視覺模型讀取手寫成績表單之文字與數字轉換 Excel 結果對照檔。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-xls" aria-hidden="true"></i> Gemini 辨識結果 (Excel)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1dQznnsbSt2l_jOM2IlE7s3_TqcW1IFzu/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1dQznnsbSt2l_jOM2IlE7s3_TqcW1IFzu" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-xls" aria-hidden="true"></i> Claude 辨識結果 (Excel)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1DJpPgNJ7Cd1GSMWK0XsoEMqkfxKBTXSI/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1DJpPgNJ7Cd1GSMWK0XsoEMqkfxKBTXSI" target="_blank">下載</a>
+                </div>
+              </div>
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-file-type-xls" aria-hidden="true"></i> ChatGPT 辨識結果 (Excel)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1HDlUw7TPGyKehQBmYgyPEYLZwUfjgyzn/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1HDlUw7TPGyKehQBmYgyPEYLZwUfjgyzn" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- 2. 原始考卷照片 -->
         <div class="file-card">
           <div>
             <div class="fc-header">
               <div class="fc-icon ft-img"><i class="ti ti-photo" aria-hidden="true"></i></div>
               <div class="fc-title-area">
-                <h4 class="fc-name">手寫成績原始考卷影像</h4>
+                <h4 class="fc-name">手寫成績考卷原始大圖</h4>
                 <div class="fc-meta">
-                  <span class="badge badge-type">JPG</span>
-                  <span class="badge badge-scope">手寫成績</span>
+                  <span class="badge badge-scope">原始單據</span>
                 </div>
               </div>
             </div>
-            <p class="fc-desc">供測試表格欄位 OCR 數據讀取的手寫成績原始照片檔案。</p>
-          </div>
-          <div class="fc-actions">
-            <a class="fc-btn fc-btn-view" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">雲端檢視</a>
-            <a class="fc-btn fc-btn-dl" href="https://drive.google.com/drive/folders/1EFeiK_j5p6UkqsqViLjbB2px7xMjIuq4?usp=drive_link" target="_blank">下載</a>
+            <p class="fc-desc">手寫原始成績紀錄表照片大圖，提供 OCR 辨識時之影像輸入比對樣張與視覺分析使用。</p>
+            <div class="fc-resources">
+              <div class="fc-res-item">
+                <span class="fc-res-info"><i class="ti ti-photo" aria-hidden="true"></i> 手寫成績記錄單 (JPG)</span>
+                <div class="fc-res-links">
+                  <a class="fc-res-link fc-res-link-view" href="https://drive.google.com/file/d/1MGz5gfz-klEIoSIb_czfdTvGm-P-qWdr/view?usp=drivesdk" target="_blank">檢視</a>
+                  <a class="fc-res-link fc-res-link-dl" href="https://drive.google.com/uc?export=download&id=1MGz5gfz-klEIoSIb_czfdTvGm-P-qWdr" target="_blank">下載</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
