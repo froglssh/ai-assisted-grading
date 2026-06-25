@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 評改實驗報告六步驟流程 - 評量標準</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+:root {
+  --color-background-info: #e6f2ef;
+  --color-text-info: #3d7a6e;
+  --font-serif: 'Noto Serif TC', serif;
+  --color-text-primary: #2d3748;
+  --color-text-secondary: #718096;
+  --border-radius-lg: 12px;
+  --border-radius-md: 8px;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f7f8fa;
+  --color-border-secondary: #cbd5e0;
+  --color-border-tertiary: #e2e8f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{padding:2rem 1.5rem 3rem;max-width:820px;margin:0 auto}
+
+/* ===== 首頁：只有六個方塊 ===== */
+.home-head{text-align:center;margin-bottom:2.2rem}
+.home-head .ht-tag{display:inline-block;font-size:18px;font-weight:500;letter-spacing:.06em;background:var(--color-background-info);color:var(--color-text-info);padding:7px 18px;border-radius:20px;margin-bottom:1rem}
+.home-head h1{font-family:var(--font-serif);font-size:36px;font-weight:500;color:var(--color-text-primary);line-height:1.4}
+.home-head .ht-author{font-size:18px;color:var(--color-text-secondary);margin-top:.85rem;letter-spacing:.04em}
+.home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.home-block{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:1.8rem 1.5rem;border:none;border-radius:var(--border-radius-lg);cursor:pointer;color:white;text-align:left;min-height:200px;transition:transform .15s,box-shadow .15s;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.home-block:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.16)}
+.hb-num{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:600}
+.hb-title{font-size:24px;font-weight:600;line-height:1.35}
+.hb-sub{font-size:17px;font-weight:400;line-height:1.5;opacity:.92;margin-top:auto}
+
+/* ===== 分頁 ===== */
+.page{display:none}
+.page.active{display:block}
+.home.hidden{display:none}
+.back-btn{display:inline-flex;align-items:center;gap:8px;font-size:18px;font-weight:500;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:11px 20px;cursor:pointer;color:var(--color-text-primary);margin-bottom:1.5rem}
+.back-btn:hover{background:var(--color-background-primary)}
+.page-header{display:flex;align-items:center;gap:18px;padding-bottom:1.3rem;margin-bottom:1.3rem;border-bottom:1px solid var(--color-border-tertiary)}
+.ph-num{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:600;flex-shrink:0;color:white}
+.ph-label{font-size:17px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:5px}
+.ph-title{font-size:28px;font-weight:600;color:var(--color-text-primary);line-height:1.35}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:2.2rem;padding-top:1.5rem;border-top:1px solid var(--color-border-tertiary)}
+.pager button{font-size:18px;font-weight:500;background:var(--color-background-primary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:12px 22px;cursor:pointer;color:var(--color-text-primary)}
+.pager button:hover{background:var(--color-background-secondary)}
+.pager button:disabled{opacity:.35;cursor:default}
+
+/* ===== 共用內容元件 ===== */
+.section-label{font-size:18px;font-weight:600;letter-spacing:.04em;color:var(--color-text-secondary);margin:1.6rem 0 .8rem;display:flex;align-items:center;gap:8px}
+.section-label::before{content:"";width:18px;height:3px;background:var(--color-border-secondary);border-radius:2px}
+.desc-text{font-size:20px;color:var(--color-text-primary);line-height:1.85;margin-bottom:.6rem}
+.tip-box{border-radius:var(--border-radius-md);padding:1.1rem 1.3rem;font-size:19px;line-height:1.75;margin:1.1rem 0;border-left:5px solid}
+.tip-ai{background:#E6F1FB;border-color:#378ADD;color:#0C447C}
+.tip-warn{background:#FAEEDA;border-color:#EF9F27;color:#633806}
+.tip-success{background:#EAF3DE;border-color:#639922;color:#27500A}
+.item-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.item-list li{display:flex;align-items:flex-start;gap:12px;font-size:19px;color:var(--color-text-primary);line-height:1.75}
+.dot{width:9px;height:9px;border-radius:50%;margin-top:10px;flex-shrink:0;display:block}
+.prompt-block{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:1.2rem 1.3rem;font-size:19px;color:var(--color-text-primary);line-height:1.85;margin:.6rem 0;position:relative}
+.prompt-tag{display:inline-block;font-size:16px;font-weight:500;letter-spacing:.05em;padding:5px 14px;border-radius:20px;margin-bottom:12px}
+.copy-btn{position:absolute;top:14px;right:14px;font-size:16px;background:var(--color-background-primary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:7px 16px;cursor:pointer;color:var(--color-text-secondary);display:flex;align-items:center;gap:6px}
+.copy-btn:hover{color:var(--color-text-primary)}
+.prompt-text{padding-right:96px;white-space:pre-wrap}
+.score-table{width:100%;border-collapse:collapse;font-size:18px;margin:.6rem 0;table-layout:fixed}
+.score-table th{font-weight:600;font-size:16px;letter-spacing:.02em;color:var(--color-text-secondary);padding:12px;text-align:left;border-bottom:1px solid var(--color-border-tertiary)}
+.score-table td{padding:14px 12px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:top;word-break:break-word;font-size:18px;line-height:1.65}
+.score-table tr:last-child td{border-bottom:none}
+.badge{display:inline-block;font-size:16px;font-weight:500;padding:3px 11px;border-radius:20px;white-space:nowrap}
+.badge-group{background:#B5D4F4;color:#042C53}
+.badge-personal{background:#C0DD97;color:#173404}
+.badge-deduct{background:#F7C1C1;color:#501313}
+.badge-note{background:#B5D4F4;color:#042C53}
+.std-box{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:1.2rem 1.3rem;margin:.6rem 0}
+.std-box>span{font-size:18px;color:var(--color-text-secondary)}
+.std-grid{display:flex;gap:12px;flex-wrap:wrap;margin-top:.8rem}
+.std-pill{flex:1;min-width:130px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:.9rem;text-align:center;background:var(--color-background-primary)}
+.std-pill .sp-mag{font-size:18px;color:var(--color-text-secondary)}
+.std-pill .sp-val{font-family:var(--font-serif);font-size:30px;font-weight:500;color:var(--color-text-primary);margin-top:4px}
+.rule-row{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap;padding:1rem 1.1rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.rule-row:last-child{border-bottom:none}
+.rule-label{font-size:19px;color:var(--color-text-primary);flex:1;min-width:180px;line-height:1.6}
+.wf-node{font-size:18px;padding:7px 16px;border-radius:20px;font-weight:500;flex-shrink:0}
+.final-card{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.8rem;margin-top:1.8rem;text-align:center}
+.final-card h3{font-size:22px;font-weight:500;color:var(--color-text-primary);margin-bottom:.7rem}
+.final-card p{font-size:19px;color:var(--color-text-secondary);margin-bottom:1.2rem;line-height:1.75}
+.final-btn{display:inline-flex;align-items:center;gap:8px;font-size:19px;font-weight:500;background:var(--color-background-primary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:14px 28px;cursor:pointer;color:var(--color-text-primary)}
+.final-btn:hover{background:var(--color-background-secondary)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:640px){.home-grid{grid-template-columns:1fr 1fr;gap:12px}.home-block{min-height:170px;padding:1.4rem 1.2rem}.hb-title{font-size:21px}.hb-sub{font-size:15px}.home-head h1{font-size:30px}}
+</style>
+
+<div class="wrap">
+
+<!-- ====================== 首頁：只有六個方塊 ====================== -->
+<div class="home" id="home">
+  <div class="home-head">
+    <span class="ht-tag">AI 輔助評量 · 教師研習指南</span>
+    <h1>用 AI 評改實驗報告 六步驟完整流程</h1>
+    <p class="ht-author">臺北市麗山高中　林獻升</p>
+  </div>
+  <div class="home-grid">
+    <button class="home-block" style="background:#185FA5" onclick="showStep(0)">
+      <span class="hb-num">1</span><span class="hb-title">建立知識基礎</span>
+      <span class="hb-sub">提供教材，讓 AI 理解實驗內容</span>
+    </button>
+    <button class="home-block" style="background:#0F6E56" onclick="showStep(1)">
+      <span class="hb-num">2</span><span class="hb-title">訂定評分標準</span>
+      <span class="hb-sub">建立小組扣分制 ＋ 個人給分制</span>
+    </button>
+    <button class="home-block" style="background:#BA7517" onclick="showStep(2)">
+      <span class="hb-num">3</span><span class="hb-title">加入照片規則</span>
+      <span class="hb-sub">設定顯微照片佐證評分邏輯</span>
+    </button>
+    <button class="home-block" style="background:#993556" onclick="showStep(3)">
+      <span class="hb-num">4</span><span class="hb-title">個人 vs 小組</span>
+      <span class="hb-sub">設定雙層計分與逐位學生輸出</span>
+    </button>
+    <button class="home-block" style="background:#3B6D11" onclick="showStep(4)">
+      <span class="hb-num">5</span><span class="hb-title">試批練習</span>
+      <span class="hb-sub">用真實報告測試，收集優化建議</span>
+    </button>
+    <button class="home-block" style="background:#534AB7" onclick="showStep(5)">
+      <span class="hb-num">6</span><span class="hb-title">定稿與存檔</span>
+      <span class="hb-sub">輸出 SOP，建立可重用 AI 助理</span>
+    </button>
+  </div>
+</div>
+
+<!-- ====================== 分頁一 ====================== -->
+<div class="page" id="page-0">
+  <button class="back-btn" onclick="showHome()"><i class="ti ti-arrow-left" aria-hidden="true"></i> 回到首頁</button>
+  <div class="page-header">
+    <div class="ph-num" style="background:#185FA5">1</div>
+    <div><div class="ph-label" style="color:#185FA5">建立知識基礎</div><div class="ph-title">提供教材，讓 AI 理解實驗內容</div></div>
+  </div>
+  <p class="desc-text">先把「教學簡報」與「實驗講義」提供給 AI，讓它理解實驗的知識架構、操作流程與預期結果，才能生成有意義、可作為批改依據的參考解答。</p>
+  <div class="section-label">你需要準備的素材</div>
+  <ul class="item-list">
+    <li><span class="dot" style="background:#185FA5"></span><span>教學簡報（PPT 或 PDF）：實驗目的、操作步驟、顯微鏡與測微器使用說明</span></li>
+    <li><span class="dot" style="background:#185FA5"></span><span>實驗講義：學生實際填寫的格式，含數據表格、問題與討論、心得欄位</span></li>
+    <li><span class="dot" style="background:#185FA5"></span><span>教師版解答（若已有）：作為校正 AI 輸出的依據</span></li>
+  </ul>
+  <div class="section-label">建議的 AI 指令（Prompt）</div>
+  <div class="prompt-block">
+    <div class="prompt-tag" style="background:#B5D4F4;color:#042C53">輸入指令</div>
+    <button class="copy-btn" onclick="cp('p0',this)"><i class="ti ti-copy" aria-hidden="true"></i> 複製</button>
+    <div class="prompt-text" id="p0">以下是高中生物「顯微測量技術」實驗的教學簡報與實驗講義，請仔細閱讀後，依報告格式生成詳細的【參考解答】，包含：
+① 目鏡測微器校正數據：40 倍、100 倍、400 倍三個倍率，每格代表的實際長度（μm）
+② 生物材料實際大小測量：至少三種不同類型標本的預期數值範圍（如頭髮、神經元、蛙血球）
+③ 問題與討論第 1～7 題的完整解答要點
+④ 心得與感想的優質示範文字（含知識、技能、情意三面向）</div>
+  </div>
+  <div class="tip-box tip-ai"><strong>AI 小技巧：</strong>上傳 PDF 比貼純文字效果更好，圖片中的表格也能被辨識。若 AI 解答有誤，直接在對話中口頭糾正即可，不必重新上傳。</div>
+  <div class="pager"><button disabled>← 上一步</button><button onclick="showStep(1)">下一步：訂定評分標準 →</button></div>
+</div>
+
+<!-- ====================== 分頁二 ====================== -->
+<div class="page" id="page-1">
+  <button class="back-btn" onclick="showHome()"><i class="ti ti-arrow-left" aria-hidden="true"></i> 回到首頁</button>
+  <div class="page-header">
+    <div class="ph-num" style="background:#0F6E56">2</div>
+    <div><div class="ph-label" style="color:#0F6E56">訂定評分標準</div><div class="ph-title">建立小組扣分制 ＋ 個人給分制規則</div></div>
+  </div>
+  <p class="desc-text">本實驗總分 100 分，由兩套不同邏輯組成：<strong>小組基本分 80 分採「扣分制」</strong>（從滿分逐項扣），<strong>個人反思分 20 分採「給分制」</strong>（依向度逐項給）。兩者不可混用。</p>
+
+  <div class="section-label">小組基本分（80 分・扣分制）總覽</div>
+  <table class="score-table">
+    <thead><tr><th style="width:36%">評分項目</th><th style="width:18%">配置</th><th>扣分規則</th></tr></thead>
+    <tbody>
+      <tr><td>測微器校正<br><span class="badge badge-group">小組</span></td><td>三倍率數值</td><td>每填錯一個數值 <span class="badge badge-deduct">−10</span>；40 與 100 倍寫反 <span class="badge badge-deduct">−20</span> 並註明</td></tr>
+      <tr><td>生物材料測量<br><span class="badge badge-group">小組</span></td><td>至少三種標本</td><td>少測一種 <span class="badge badge-deduct">−5</span>；計算偏差大或未寫單位 <span class="badge badge-deduct">−1～3</span></td></tr>
+      <tr><td>顯微照片佐證<br><span class="badge badge-group">小組</span></td><td>每種標本附照</td><td>缺照片（不論幾張）統一 <span class="badge badge-deduct">−5</span>（詳見步驟三）</td></tr>
+      <tr><td>問題與討論<br><span class="badge badge-group">小組</span></td><td>共 7 題</td><td>每題完全答錯或空白 <span class="badge badge-deduct">−5</span>；部分錯誤 <span class="badge badge-deduct">−2～3</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-label">標準答案：測微器校正數值</div>
+  <div class="std-box">
+    <span>目鏡測微器每格代表的實際長度（隨物鏡倍率改變）：</span>
+    <div class="std-grid">
+      <div class="std-pill"><div class="sp-mag">40 倍</div><div class="sp-val">25 μm</div></div>
+      <div class="std-pill"><div class="sp-mag">100 倍</div><div class="sp-val">10 μm</div></div>
+      <div class="std-pill"><div class="sp-mag">400 倍</div><div class="sp-val">2.5 μm</div></div>
+    </div>
+  </div>
+  <div class="tip-box tip-warn"><strong>防呆重點：</strong>學生最常把 40 倍（25）與 100 倍（10）寫反。AI 須特別檢查這兩格是否互換，若寫反扣 20 分並在評語註明原因。</div>
+
+  <div class="section-label">個人反思分（20 分・給分制）框架</div>
+  <table class="score-table">
+    <thead><tr><th style="width:22%">向度</th><th>優等 7–10</th><th>尚可 3–6</th><th>待加強 0–2</th></tr></thead>
+    <tbody>
+      <tr><td><strong>知識面</strong><br><span class="badge badge-personal">10 分</span></td><td>完整敘述測量與校正原理，正確使用專有名詞</td><td>有提及知識，但關鍵字不足或觀念略偏</td><td>空泛偏題、或 AI 生成無自身理解</td></tr>
+      <tr><td><strong>技能情意</strong><br><span class="badge badge-personal">10 分</span></td><td>具體描述操作痛點與解決方法，展現正向態度</td><td>有寫過程，但缺乏具體操作痛點細節</td><td>空泛流於形式，或 AI 生成</td></tr>
+    </tbody>
+  </table>
+  <div class="tip-box tip-warn"><strong>零分條款：</strong>未寫心得（缺交），或明顯依賴 AI 代寫且無個人消化反思者，個人分整大題直接 0 分。</div>
+
+  <div class="section-label">建議的 AI 指令（Prompt）</div>
+  <div class="prompt-block">
+    <div class="prompt-tag" style="background:#9FE1CB;color:#04342C">輸入指令</div>
+    <button class="copy-btn" onclick="cp('p1',this)"><i class="ti ti-copy" aria-hidden="true"></i> 複製</button>
+    <div class="prompt-text" id="p1">根據以上參考解答，請建立完整的【評分標準】，採「小組基本分 80 分（扣分制）＋ 個人反思分 20 分（給分制）」雙軌架構：
+① 小組分：測微器校正三倍率每格錯誤 −10、40/100 倍寫反 −20；生物材料未達三種 −5；缺照片統一 −5；問題與討論 7 題每題完全錯誤 −5
+② 個人分：知識面 10 分、技能與情意面 10 分，各依「優等 7–10／尚可 3–6／待加強 0–2」描述語給分
+③ 設定零分條款：心得缺交或明顯 AI 代寫者個人分直接 0 分
+④ 每個項目都附「可給學生看懂的說明句」，並列出常見錯誤類型以提高評分一致性</div>
+  </div>
+  <div class="tip-box tip-success"><strong>校準目標：</strong>標準訂好後，先用 1～2 份報告試批再決定是否微調，以全班平均落在 70–80 分為設計目標。</div>
+  <div class="pager"><button onclick="showStep(0)">← 上一步：建立知識基礎</button><button onclick="showStep(2)">下一步：加入照片規則 →</button></div>
+</div>
+
+<!-- ====================== 分頁三 ====================== -->
+<div class="page" id="page-2">
+  <button class="back-btn" onclick="showHome()"><i class="ti ti-arrow-left" aria-hidden="true"></i> 回到首頁</button>
+  <div class="page-header">
+    <div class="ph-num" style="background:#BA7517">3</div>
+    <div><div class="ph-label" style="color:#BA7517">加入照片佐證規則</div><div class="ph-title">設定顯微照片的評分與標記邏輯</div></div>
+  </div>
+  <p class="desc-text">本實驗要求學生為每種生物材料附顯微照片佐證。AI 無法保證判斷照片品質，但能依規則計分，並在無法確認時主動標記「請教師人工確認」。</p>
+  <div class="section-label">照片佐證評分規則</div>
+  <div style="border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow:hidden;margin:.6rem 0">
+    <div class="rule-row"><span class="rule-label">缺少任何標本顯微照片</span><span class="badge badge-deduct">統一 −5 分（不依數量累加）</span></div>
+    <div class="rule-row"><span class="rule-label">照片未附在對應數據表格之後</span><span class="badge badge-deduct">視為缺少佐證 −5 分</span></div>
+    <div class="rule-row"><span class="rule-label">照片模糊至無法判讀測微尺刻度</span><span class="badge badge-deduct">視為無效照片 −5 分</span></div>
+    <div class="rule-row"><span class="rule-label">AI 無法確認照片是否存在（掃描模糊）</span><span class="badge badge-note">標示「⚠ 請教師人工確認」</span></div>
+  </div>
+  <div class="section-label">提示詞 1 — 將照片規則加入評分標準</div>
+  <div class="prompt-block">
+    <div class="prompt-tag" style="background:#FAC775;color:#412402">建立規則</div>
+    <button class="copy-btn" onclick="cp('p2a',this)"><i class="ti ti-copy" aria-hidden="true"></i> 複製</button>
+    <div class="prompt-text" id="p2a">請在現有評分標準中，加入以下【顯微照片佐證評分規則】：
+1. 扣分邏輯：缺少任何標本的顯微照片，統一扣 5 分，不依缺少數量累加
+2. 照片位置：照片須附在對應標本測量數據表格之後，位置錯誤視同缺少佐證
+3. 照片品質：若模糊到無法辨識測微尺刻度，視為無效照片，同樣扣 5 分
+4. 標記方式：若無法從報告確認照片是否存在（如掃描模糊），請標示「⚠ 照片欄位，請教師人工確認」，不自行判斷扣分
+5. 回饋說明句範本：「【照片缺失 −5 分】本份報告缺少顯微照片佐證，依評分規則扣 5 分。請下次務必拍攝清晰的顯微照片並貼於對應數據表格後方。」</div>
+  </div>
+  <div class="section-label">提示詞 2 — 批改時請 AI 主動檢查照片</div>
+  <div class="prompt-block">
+    <div class="prompt-tag" style="background:#9FE1CB;color:#04342C">批改指令</div>
+    <button class="copy-btn" onclick="cp('p2b',this)"><i class="ti ti-copy" aria-hidden="true"></i> 複製</button>
+    <div class="prompt-text" id="p2b">批改這份報告時，請執行【照片佐證檢查】：
+Step 1：確認是否有「生物材料測量數據」對應的顯微照片
+Step 2：確認照片是否附在數據表格後方（位置正確）
+Step 3：若照片存在且位置正確 → 標示「✅ 照片佐證：完整」
+Step 4：若缺照片或位置錯誤 → 統一扣 5 分，並輸出說明句「【照片缺失 −5 分】……」
+Step 5：若為掃描版無法確認品質 → 標示「⚠ 照片欄位，請教師人工確認」，暫不扣分</div>
+  </div>
+  <div class="tip-box tip-ai"><strong>使用說明：</strong>若學生以圖片上傳報告，可直接把圖片交給 AI 判斷照片是否合格。若為掃描 PDF，建議解析度 150 DPI 以上。</div>
+  <div class="tip-box tip-warn"><strong>為何統一扣 5 分？</strong>避免學生因少一張就被大量累扣。若你想改為「每缺一張扣 3 分」，在提示詞中改數字即可。</div>
+  <div class="pager"><button onclick="showStep(1)">← 上一步：訂定評分標準</button><button onclick="showStep(3)">下一步：個人 vs 小組 →</button></div>
+</div>
+
+<!-- ====================== 分頁四 ====================== -->
+<div class="page" id="page-3">
+  <button class="back-btn" onclick="showHome()"><i class="ti ti-arrow-left" aria-hidden="true"></i> 回到首頁</button>
+  <div class="page-header">
+    <div class="ph-num" style="background:#993556">4</div>
+    <div><div class="ph-label" style="color:#993556">個人 vs 小組分數</div><div class="ph-title">設定雙層計分與逐位學生輸出</div></div>
+  </div>
+  <p class="desc-text">本實驗為小組作業：表格與討論為「小組共用」分數，心得為「個人各自」分數，最後合併為每位學生的總分。請在指令中清楚說明此架構，避免 AI 把小組錯誤重複扣到每個人身上。</p>
+  <div class="section-label">雙層計分流程</div>
+  <div style="display:flex;flex-direction:column;gap:12px;margin:.8rem 0">
+    <div style="display:flex;align-items:center;gap:12px"><div class="wf-node" style="background:#FBEAF0;color:#4B1528">第一步</div><span style="font-size:19px;color:var(--color-text-primary)">小組基本分（80 分，扣分制）＝ 校正表 ＋ 測量數據 ＋ 照片 ＋ 問題討論</span></div>
+    <div style="display:flex;align-items:center;gap:12px"><div class="wf-node" style="background:#FBEAF0;color:#4B1528">第二步</div><span style="font-size:19px;color:var(--color-text-primary)">個人反思分（20 分，給分制）＝ 各自評分，不共用</span></div>
+    <div style="display:flex;align-items:center;gap:12px"><div class="wf-node" style="background:#D4537E;color:white">第三步</div><span style="font-size:19px;color:var(--color-text-primary)">個人總分 ＝ 小組基本分 ＋ 個人反思分（最高 100 分）</span></div>
+  </div>
+  <div class="section-label">建議的 AI 指令（Prompt）</div>
+  <div class="prompt-block">
+    <div class="prompt-tag" style="background:#F4C0D1;color:#4B1528">輸入指令</div>
+    <button class="copy-btn" onclick="cp('p3',this)"><i class="ti ti-copy" aria-hidden="true"></i> 複製</button>
+    <div class="prompt-text" id="p3">這份報告為小組作業，請依以下規則計算每位學生分數：
+① 小組基本分（80 分）：依評分標準計算測微器校正、生物材料測量、照片佐證、問題與討論，所有組員共用此分數（同一錯誤只扣一次）
+② 個人反思分（20 分）：心得與感想欄位，每位學生文字前有「[班級][座號]」標記，請分別評每位學生的知識面（10）與技能情意面（10）
+③ 輸出格式：逐位學生列出「[學生標記] 小組分：XX + 個人反思：XX = 總分：XX」
+④ 每位學生心得評語附「優點」與「需改進之處」各 1～2 點
+⑤ 若找不到班級座號標記，列為「未標記學生」並提示教師人工確認，不要自行歸組</div>
+  </div>
+  <div class="tip-box tip-success"><strong>教師提示：</strong>逐位列出能讓學生清楚看到自己的得分來源；小組分相同、個人分不同，是這份作業最常被學生詢問的地方，先講清楚可省去大量解釋。</div>
+  <div class="pager"><button onclick="showStep(2)">← 上一步：加入照片規則</button><button onclick="showStep(4)">下一步：試批練習 →</button></div>
+</div>
+
+<!-- ====================== 分頁五 ====================== -->
+<div class="page" id="page-4">
+  <button class="back-btn" onclick="showHome()"><i class="ti ti-arrow-left" aria-hidden="true"></i> 回到首頁</button>
+  <div class="page-header">
+    <div class="ph-num" style="background:#3B6D11">5</div>
+    <div><div class="ph-label" style="color:#3B6D11">試批練習</div><div class="ph-title">用真實報告測試，收集優化建議</div></div>
+  </div>
+  <p class="desc-text">正式使用前，先用 2～3 份代表性報告試批。挑「一份優秀、一份普通、一份有明顯錯誤」最能快速暴露評分標準的盲點。</p>
+  <div class="section-label">試批後的自我檢查清單</div>
+  <ul class="item-list">
+    <li><span class="dot" style="background:#3B6D11"></span><span>AI 扣分判斷與教師自批是否一致？若差距超過 10 分，需重新校正規則</span></li>
+    <li><span class="dot" style="background:#3B6D11"></span><span>小組分是否只算一次、個人心得是否分別評？有無把小組錯誤重複扣到每人？</span></li>
+    <li><span class="dot" style="background:#3B6D11"></span><span>心得評語是否有建設性、避免空洞套話？</span></li>
+    <li><span class="dot" style="background:#3B6D11"></span><span>扣分說明是否讓學生清楚知道哪裡錯、為什麼扣分？</span></li>
+    <li><span class="dot" style="background:#3B6D11"></span><span>全班平均預估是否落在合理範圍（70–80 分）？</span></li>
+  </ul>
+  <div class="section-label">建議的 AI 指令（Prompt）</div>
+  <div class="prompt-block">
+    <div class="prompt-tag" style="background:#C0DD97;color:#173404">優化指令</div>
+    <button class="copy-btn" onclick="cp('p4',this)"><i class="ti ti-copy" aria-hidden="true"></i> 複製</button>
+    <div class="prompt-text" id="p4">你剛完成兩份學生報告的試批，請從以下角度提出【評分標準優化建議】：
+① 哪些項目規則不夠清楚、容易產生歧義？
+② 現行標準過嚴或過寬？扣分幅度建議如何調整？
+③ 個人反思的知識面、技能情意面描述語有無可更精確之處？
+④ 試批時遇到、但現有標準未涵蓋的情形有哪些？
+請條列呈現，並對每項建議說明調整理由。</div>
+  </div>
+  <div class="pager"><button onclick="showStep(3)">← 上一步：個人 vs 小組</button><button onclick="showStep(5)">下一步：定稿與存檔 →</button></div>
+</div>
+
+<!-- ====================== 分頁六 ====================== -->
+<div class="page" id="page-5">
+  <button class="back-btn" onclick="showHome()"><i class="ti ti-arrow-left" aria-hidden="true"></i> 回到首頁</button>
+  <div class="page-header">
+    <div class="ph-num" style="background:#534AB7">6</div>
+    <div><div class="ph-label" style="color:#534AB7">定稿與存檔</div><div class="ph-title">輸出 SOP，建立可重用的 AI 助理</div></div>
+  </div>
+  <p class="desc-text">完成試批與優化後，讓 AI 輸出一份完整版評分標準文件，並建立可重複使用的「批改工作指令」，下次只需貼入學生報告即可直接執行。</p>
+  <div class="section-label">最終版文件應包含</div>
+  <ul class="item-list">
+    <li><span class="dot" style="background:#534AB7"></span><span>實驗名稱、版本日期、適用班級與學期</span></li>
+    <li><span class="dot" style="background:#534AB7"></span><span>完整參考解答（含三倍率數值、標本數值範圍、討論題要點）</span></li>
+    <li><span class="dot" style="background:#534AB7"></span><span>扣分／給分規則對照表（項目 → 錯誤類型 → 分數 → 回饋說明句）</span></li>
+    <li><span class="dot" style="background:#534AB7"></span><span>雙層計分說明（小組分 ＋ 個人分的合併方式）</span></li>
+    <li><span class="dot" style="background:#534AB7"></span><span>「需人工確認」清單（手寫不清、照片模糊、標記缺失）</span></li>
+  </ul>
+  <div class="section-label">建議的 AI 指令（Prompt）</div>
+  <div class="prompt-block">
+    <div class="prompt-tag" style="background:#CECBF6;color:#26215C">定稿指令</div>
+    <button class="copy-btn" onclick="cp('p5',this)"><i class="ti ti-copy" aria-hidden="true"></i> 複製</button>
+    <div class="prompt-text" id="p5">請整合以上所有對話，輸出一份【顯微測量實驗報告評分標準 SOP】，格式要求：
+① 標題：「顯微測量實驗報告評分標準 v1.0（[學期]）」
+② 內容：參考解答全文 → 小組扣分規則對照表 → 個人給分三向度描述語 → 零分條款
+③ 末尾附「AI 批改工作指令模板」——下次只需在指令最後貼入學生報告 PDF 即可直接評改
+④ 輸出 Markdown 格式，方便複製到 Notion 或 Google Doc 存檔</div>
+  </div>
+  <div class="tip-box tip-success"><strong>進階應用：</strong>把整份 SOP 存入 Claude Project 的知識庫，之後每次開新對話 AI 會自動套用此評分標準，無需重新說明，大幅提升批改效率與一致性。</div>
+  <div class="final-card">
+    <h3>設定完成，想讓 AI 示範實際評改？</h3>
+    <p>上傳一份學生顯微測量實驗報告 PDF，讓 AI 示範完整的評改流程與成績單輸出</p>
+    <button class="final-btn" onclick="sendPrompt('我想用 AI 評改一份學生的顯微測量實驗報告。請告訴我該怎麼開始、我需要準備哪些素材，並示範一份完整的批改成績單格式。')">
+      <i class="ti ti-robot" aria-hidden="true"></i> 開始 AI 評改示範 ↗
+    </button>
+  </div>
+  <div class="pager"><button onclick="showStep(4)">← 上一步：試批練習</button><button onclick="showHome()">完成，回到首頁 ✓</button></div>
+</div>
+
+</div>
+
+<script>
+function showStep(i){
+  document.getElementById('home').classList.add('hidden');
+  for(var n=0;n<6;n++){var p=document.getElementById('page-'+n);if(p)p.classList.remove('active');}
+  var t=document.getElementById('page-'+i);if(t)t.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showHome(){
+  for(var n=0;n<6;n++){var p=document.getElementById('page-'+n);if(p)p.classList.remove('active');}
+  document.getElementById('home').classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function cp(id,btn){var el=document.getElementById(id);if(!el||!btn)return;navigator.clipboard.writeText(el.innerText.trim()).then(function(){btn.innerHTML='<i class="ti ti-check" aria-hidden="true"></i> 已複製';setTimeout(function(){btn.innerHTML='<i class="ti ti-copy" aria-hidden="true"></i> 複製'},1800)})}
+</script>
+</body>
+</html>

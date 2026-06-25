@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+Thumbs.db
+
+# Office / PDF / Media (避免 repository 太大)
+**/*.mp4
+**/*.m4a
+**/*.docx
+**/*.xlsx
+**/*.pdf
+**/*.JPG
+
+# 暫存檔
+~$*
+**/~$*
